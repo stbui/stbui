@@ -17,14 +17,12 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    -webkit-transition: background-color .3s ease-out, border-color .3s ease-out;
-    transition: background-color .3s ease-out, border-color .3s ease-out;
 }
 
 .btn-default {
-    color: #444;
-    background-color: #e6e6e6;
-    border-color: #e6e6e6;
+    color: #fff;
+    background-color: #2F5895;
+    border-color: #2F5895;
 }
 
 .btn-primary {

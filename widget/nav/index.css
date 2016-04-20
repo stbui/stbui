@@ -38,14 +38,14 @@
     width: 100px;
 }
 
-.nav ul li:hover ul.second, /*·ÇIE6*/
+.nav ul li:hover ul.second, /*éIE6*/
 .nav ul a:hover ul.second {
     /*IE6*/
     visibility: visible;
 }
 
 .nav ul ul li {
-    clear: both; /*´¹Ö±ÏÔÊ¾*/
+    clear: both; /*å‚ç›´æ˜¾ç¤º*/
     text-align: left;
 }
 
@@ -64,24 +64,24 @@
     visibility: visible;
 }
 
-/*Ö¸¶¨ÊÇÏÔÊ¾Îå¼¶×Ó²Ëµ¥*/
+/*æŒ‡å®šæ˜¯æ˜¾ç¤ºäº”çº§å­èœå•*/
 .nav ul ul ul ul li:hover ul.fifth,
 .nav ul ul ul ul a:hover ul.fifth {
     visibility: visible;
 }
 
-/*Ö¸¶¨ÊÇÏÔÊ¾Áù¼¶×Ó²Ëµ¥*/
+/*æŒ‡å®šæ˜¯æ˜¾ç¤ºå…­çº§å­èœå•*/
 .nav ul ul ul ul ul li:hover ul.sixth,
 .nav ul ul ul ul ul a:hover ul.sixth {
     visibility: visible;
 }
 
-/*ÖØÉè×Ó²Ëµ¥ÔÚÊó±ê»¬¹ıÊ±µÄÑùÊ½£¬ÓĞ¶àÉÙ¸öul¾Í±íÃ÷µ±Ç°ÊÇ¶àÉÙ¼¶×Ó²Ëµ¥*/
-/*¶ş¼¶×Ó²Ëµ¥*/
+/*é‡è®¾å­èœå•åœ¨é¼ æ ‡æ»‘è¿‡æ—¶çš„æ ·å¼ï¼Œæœ‰å¤šå°‘ä¸ªulå°±è¡¨æ˜å½“å‰æ˜¯å¤šå°‘çº§å­èœå•*/
+/*äºŒçº§å­èœå•*/
 .nav ul ul a:hover {
 }
 
-/*Èı¼¶×Ó²Ëµ¥*/
+/*ä¸‰çº§å­èœå•*/
 .nav ul ul ul a:hover {
     background: #B45B3E;
     color: #369;

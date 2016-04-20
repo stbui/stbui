@@ -9,21 +9,22 @@
     display: block;
     margin-bottom: -1px;
     background-color: #fff;
-    border: 1px solid #dedede;
-    border-width: 1px 0
+    /*border: 1px solid #dedede;*/
+    /*border-width: 1px 0*/
 }
 
 .list li a {
     display: block;
-    padding: 12px 0;
-    color: #325896;
-    font-family: "Microsoft YaHei";
+    padding: 6px 0;
+    color: #315794;
+    font-size: 14px;
+    font-family: "SimSun";
 }
 
-.list li a:hove,
+.list li a:hover,
 .list li a:focus,
-.list li a.active,
-{
+.list li a.active {
+    color: #FF4900;
 }
 
 .list-truncate li a {
@@ -43,11 +44,11 @@
     background: #f5f5f5;
 }
 
-
 /*.media*/
 .media {
     margin-top: 15px;
 }
+
 .media:first-child {
     margin-top: 0;
 }
@@ -56,6 +57,7 @@
     display: table-cell;
     vertical-align: top;
 }
+
 .media-left, .media .pull-left {
     padding-right: 10px;
 }
@@ -67,9 +69,11 @@
     overflow: hidden;
     zoom: 1;
 }
+
 .media-object {
     display: block;
 }
+
 .media-heading {
     margin-top: 0;
     margin-bottom: 5px;
@@ -77,7 +81,7 @@
 
 .media-body,
 .media-left {
-    float: left;
+    /*float: left;*/
 }
 
 .media-right {

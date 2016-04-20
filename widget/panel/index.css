@@ -5,17 +5,18 @@
 }
 
 .panel-head {
-    padding: 9px 20px;
+    padding: 9px 0;
     border-bottom: 1px solid transparent
 }
 
 .panel-body {
-    padding: 20px;
+    padding: 10px;
 }
 
 .panel-title {
     margin: 0;
     font-size: 100%;
+    font-weight: 900;
     color: inherit
 }
 
@@ -29,7 +30,6 @@
     border-top: 1px solid #ddd
 }
 
-
 .panel-left {
     float: left;
 }
@@ -38,7 +38,9 @@
     float: right;
 }
 
-
-.panel-default {
-    border-color: #305895
+.panel-right a {
+    font-size: 12px;
+    color: #315794;
+    font-family: "SimSun";
 }
+

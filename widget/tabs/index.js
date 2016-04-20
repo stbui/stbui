@@ -1,6 +1,7 @@
 require('./index.css');
 
 
+
 var Tab = function (element) {
     this.element = $(element)
 }
@@ -90,7 +91,12 @@ $.fn.tab = function (option) {
 $.fn.tab.Constructor = Tab
 
 
-$(document).on('mouseover', '[data-toggle="tab"]', function (e) {
+//$(document).on('mouseover', '[data-toggle="tab"]', function (e) {
+//    e.preventDefault();
+//    $(this).tab('show');
+//});
+
+$(document).on('click', '[data-toggle="tab"]', function (e) {
     e.preventDefault();
     $(this).tab('show');
 });

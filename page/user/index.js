@@ -8,6 +8,4 @@ var list = require('../../widget/list/index');
 //    });
 //});
 
-require.ensure(['../../widget/ajax/ajax.js'], function(require) {
-    require('../../widget/ajax/ajax.js');
-});
+

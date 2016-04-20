@@ -26,8 +26,3 @@ require.ensure(['../../widget/dropdown/index'], function (require, m) {
 require.ensure(['../../widget/tabs/index'], function (require) {
     //require('../../widget/tabs/index');
 });
-
-require.ensure(['../../widget/ajax/ajax.js'], function (require) {
-    //require('../../widget/ajax/ajax.js');
-});
-

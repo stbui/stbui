@@ -14,7 +14,7 @@
 
 .navbar li,
 .navbar li a {
-    font-size: 14px;
+    /*font-size: 14px;*/
     display: block;
     position: relative;
     float: left;
@@ -46,7 +46,7 @@
 }
 
 .navbar-default {
-    background-color: #3A5E95;
+    background-color: #305895;
 }
 
 .navbar-default li a {

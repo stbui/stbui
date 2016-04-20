@@ -2,17 +2,9 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #dfdfdf;
-    border-top: 2px solid #ff4901;
-
-    position: fixed !important;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    _top: expression(eval(document.documentElement.scrollTop));
-    z-index: 999;
+    /*background-color: #f7f7f7;*/
+    /*border-bottom: 1px solid #dfdfdf;*/
+    /*border-top: 2px solid #ff4901;*/
 }
 
 .header-wrapper {
@@ -27,118 +19,24 @@
     z-index: 999;
 }
 
-.nav {
-    font-size: 12px;
-}
-
-.nav li {
-    float: left;
-    list-style: none;
-    position: relative;
-}
-
-.nav a {
-    display: block;
-    height: 32px;
-    width: 80px;
-    line-height: 32px;
-    background: #f7f7f7;
-    color: #000;
-    text-decoration: none;
-    text-align: center;
-    overflow: hidden;
-}
-.nav a:hover {
-    background: #eaeaea;
-    color: #ff4901;
-}
-
-.nav ul ul {
-    visibility: hidden;
+.header-sticky {
+    position: fixed !important;
     position: absolute;
-    left: 0px;
-    top: 32px;
-}
-.nav ul ul a{
-    background: #f7f7f7;
-    border: 1px solid #b3d0e4;
-    margin-top: -1px;
-    width: 100px;
-}
-
-.nav ul li:hover ul.second, /*非IE6*/
-.nav ul a:hover ul.second {
-    /*IE6*/
-    visibility: visible;
-}
-
-.nav ul ul li {
-    clear: both; /*垂直显示*/
-    text-align: left;
-}
-
-.nav .third, .nav .fourth, .nav .fifth, .nav .sixth {
+    left: 0;
     top: 0;
-    left: 100px;
+    width: 100%;
+    _top: expression(eval(document.documentElement.scrollTop));
+    z-index: 999;
 }
 
-.nav ul ul li:hover ul.third,
-.nav ul ul a:hover ul.third {
-    visibility: visible;
+.header-default {
+    background-color: #305895;
 }
-
-.nav ul ul ul li:hover ul.fourth,
-.nav ul ul ul a:hover ul.fourth {
-    visibility: visible;
+.header-default .header-wrapper {
+    height: 40px;
 }
-
-/*指定是显示五级子菜单*/
-.nav ul ul ul ul li:hover ul.fifth,
-.nav ul ul ul ul a:hover ul.fifth {
-    visibility: visible;
-}
-
-/*指定是显示六级子菜单*/
-.nav ul ul ul ul ul li:hover ul.sixth,
-.nav ul ul ul ul ul a:hover ul.sixth {
-    visibility: visible;
-}
-
-/*重设子菜单在鼠标滑过时的样式，有多少个ul就表明当前是多少级子菜单*/
-/*二级子菜单*/
-.nav ul ul a:hover {
-}
-
-/*三级子菜单*/
-.nav ul ul ul a:hover {
-    background: #B45B3E;
-    color: #369;
-}
-
-.nav ul ul ul ul a:hover {
-    background: #FFE8AA;
-    color: #68DFFB;
-}
-
-.nav ul ul ul ul ul a:hover {
-    background: #8080C0;
-    color: #F8F8F8;
-}
-
-.nav ul ul ul ul ul ul a:hover {
-    background: #f00;
-    color: #000;
-}
-
-.nav table {
-    border-collapse: collapse;
-}
-
-.icon-arrow-down {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-image: url("http://g1.dfcfw.com/g1/201306/20130621150230.png");
-    background-repeat: no-repeat;
-    background-position: right -355px;
+.header-primary {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #dfdfdf;
+    border-top: 2px solid #ff4901;
 }
