@@ -1,0 +1,24 @@
+.primary-panel {
+    border: 0;
+}
+
+.primary-panel .panel-head {
+    border-width: 3px;
+    padding-left: 0;
+    padding-right: 0;
+    _padding: 0;
+    font-size: 18px;
+    border-color: #305895;
+}
+
+.primary-panel .panel-body {
+
+}
+
+.primary-panel .panel-title {
+    padding: 9.6px 10px;
+    border-bottom: 3px solid #f00;
+    color: #f00;
+    _top: 3px;
+    _position: relative;
+}

@@ -1,0 +1,63 @@
+.article {
+
+}
+.article-head {
+}
+.article-body {
+}
+
+.article:after, .article:before {
+    content: " ";
+    display: table
+}
+
+.article-title {
+    margin: 0;
+    font-size: 25px;
+    line-height: 1.15;
+    font-weight: 400
+}
+
+.article-title a {
+    color: inherit;
+    text-decoration: none
+}
+
+.article-meta {
+    margin: 10px 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #999
+}
+
+.article-lead {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    border: 1px solid #dedede;
+    border-radius: 2px;
+    background: #f9f9f9;
+    padding: 10px
+}
+
+.article-divider {
+    margin-bottom: 24px;
+    border-color: #eee
+}
+
+.article::selection,
+.article-body::selection,
+.article-body p::selection{
+    background-color: #FF4802;
+    color: #fff;
+}
+
+.article-body blockquote {
+    font-family: Georgia, "Times New Roman", Times, Kai, "Kaiti SC", KaiTi, BiauKai, FontAwesome, serif
+}
+
+.article-body img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}

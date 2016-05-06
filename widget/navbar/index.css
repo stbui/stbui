@@ -1,0 +1,100 @@
+.navbar {
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+    height: 40px;
+    overflow: hidden;
+}
+
+.navbar:after,
+.navbar:before {
+    content: " ";
+    display: table;
+}
+
+.navbar li,
+.navbar li a {
+    font-size: 14px;
+    display: block;
+    position: relative;
+    float: left;
+    white-space: nowrap;
+}
+
+.navbar li a {
+    padding: 10px;
+}
+
+.navbar li a:focus,
+.navbar li a:hover {
+    text-decoration: none;
+}
+
+.navbar li.active a,
+.navbar li.active a:focus,
+.navbar li.active a:hover {
+    text-decoration: none;
+}
+
+.navbar li.disabled a,
+.navbar li.disabled a:focus,
+.navbar li.disabled a:hover {
+    color: #999;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: not-allowed
+}
+
+.navbar-default {
+    background-color: #3A5E95;
+}
+
+.navbar-default li a {
+    color: #fff;
+}
+
+.navbar-default li a:focus,
+.navbar-default li a:hover {
+    color: #f00;
+}
+
+.navbar-default li.active a,
+.navbar-default li.active a:focus,
+.navbar-default li.active a:hover {
+
+}
+
+.navbar-border {
+    border: 1px solid #3A5E95;
+    border-top: 0;
+}
+
+.navbar-border li:first-child {
+    border-right: 1px solid #3A5E95;
+}
+
+.navbar-brand li:first-child {
+    border-right: 1px solid #fff;
+}
+
+.navbar-border li:first-child a{
+    color: #000;
+    font-weight: 900;
+}
+.navbar-brand li:first-child a {
+    font-weight: 900;
+}
+
+
+/*ie hack*/
+.navbar-brand li {
+    _border-right-width: expression(this.previousSibling==null?"1px":"");
+    _border-right-style: expression(this.previousSibling==null?"solid":"");
+    _border-right-color: expression(this.previousSibling==null?"#fff":"");
+}
+
+.navbar-border li {
+    _border-right-width: expression(this.previousSibling==null?"1px":"");
+    _border-right-style: expression(this.previousSibling==null?"solid":"");
+    _border-right-color: expression(this.previousSibling==null?"#3A5E95":"");
+}

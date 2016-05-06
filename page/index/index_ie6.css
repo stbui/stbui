@@ -1,0 +1,40 @@
+.panel-primary .panel-head {
+    padding: 0;
+}
+
+.panel-primary .panel-title {
+    /*position: relative;*/
+    z-index: 1030;
+}
+
+.panel-primary .panel-more {
+    padding: 10px 15px;
+}
+
+.panel-primary .panel-body {
+    /*position: relative;*/
+    z-index: 1030;
+    top: -3px;
+}
+
+.panel-default .panel-head {
+    padding: 0;
+}
+
+.panel-default .panel-title {
+    /*position: relative;*/
+    z-index: 1;
+}
+
+.panel-default .panel-more {
+    padding: 10px 15px;
+}
+
+.panel-default .panel-body {
+    /*position: relative;*/
+    top: -3px;
+}
+
+.ie6 {
+
+}
