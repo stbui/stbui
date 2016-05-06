@@ -1,11 +1,8 @@
 {
   "name": "stbui",
   "version": "1.0.0",
-  "description": "",
+  "description": "stbui",
   "main": "index.js",
-  "bin": {
-    "stbui": "notepad"
-  },
   "scripts": {
     "w":"webpack --progress --colors --watch",
     "s": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build",
@@ -16,17 +13,6 @@
   "author": "stbui.com",
   "license": "ISC",
   "devDependencies": {
-    "commander": "^2.9.0",
-    "fis-parser-es6-babel": "^1.0.0",
-    "fis-parser-less": "^0.1.3",
-    "fis3": "^3.0.6",
-    "fis3-hook-commonjs": "^0.1.15",
-    "fis3-hook-module": "^1.1.1",
-    "fis3-hook-relative": "^1.0.7",
-    "fis3-postpackager-loader": "^1.3.17",
-    "liftoff": "^2.1.0",
-    "minimist": "^1.1.1",
-    "vinyl-fs": "^2.4.3",
-    "win-spawn": "^2.0.0"
+
   }
 }
