@@ -1,3 +1,6 @@
+require('./index.css');
+
+
 var Tab = function (element) {
     this.element = $(element)
 }
