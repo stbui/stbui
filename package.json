@@ -4,8 +4,7 @@
   "description": "stbui",
   "main": "index.js",
   "scripts": {
-    "w":"webpack --progress --colors --watch",
-    "s": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build",
+    "start": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build",
     "build": "webpack --progress --colors --watch",
     "watch": "webpack-dev-server --hot --progress --colors",
     "dist": "NODE_ENV=production webpack --progress --colors"
@@ -13,6 +12,7 @@
   "author": "stbui.com",
   "license": "ISC",
   "devDependencies": {
-
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.16.1"
   }
 }

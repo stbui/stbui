@@ -27,11 +27,12 @@ module.exports = {
     },
     module: {
         loaders: [
-            {
-                test: /\.js$/,
-                loaders: ['babel?presets[]=es2015'],
-                exclude: /node_modules/
-            }, {
+            //{
+            //    test: /\.js$/,
+            //    loaders: ['babel?presets[]=es2015'],
+            //    exclude: /node_modules/
+            //},
+             {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
             }, {
