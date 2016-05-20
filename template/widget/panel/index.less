@@ -1,0 +1,100 @@
+@import "../lib/variables.less";
+
+.panel {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+}
+
+.panel-head {
+  padding: 10px;
+  border-bottom: 1px solid transparent
+}
+
+.panel-body {
+  padding: 10px;
+}
+
+.panel-title {
+  font-size: 100%;
+  font-weight: 900;
+  color: inherit;
+
+  a {
+    color: inherit
+  }
+}
+
+.panel-footer {
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd
+}
+
+.panel {
+  .table {
+    margin-top: 0;
+  }
+}
+
+.panel-variant(default; @brand-default);
+.panel-variant(primary; @brand-primary);
+
+.panel-variant(@theme,@background) {
+  .panel-@{theme} {
+    border: 1px solid @background;
+
+    .panel-head {
+      background-color: @background;
+    }
+    .panel-title {
+      font-family: @font-family-yahei;
+      font-weight: 900;
+      color: #fff;
+
+    }
+
+    .panel-body {
+
+    }
+
+    .panel-footer {
+
+    }
+  }
+}
+
+.panel-striped {
+
+}
+
+.panel-striped .panel-head {
+  padding: 10px 0;
+  border-bottom: 3px solid @brand-default;
+}
+
+.panel-striped .panel-title {
+  .font-variant(@brand-primary;@font-size-large;@font-family-yahei);
+  font-weight: 900;
+  padding: 10px;
+  border-bottom: 3px solid @brand-primary;
+}
+
+.panel-striped .panel-body {
+}
+
+.panel-striped .panel-footer {
+}
+
+
+.panel-left {
+  float: left !important;
+}
+
+.panel-right {
+  float: right !important;
+}
+
+.panel-right a {
+  .font-variant(@link-color;@font-size-small;@font-family-base);
+}

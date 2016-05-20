@@ -1,0 +1,173 @@
+@brand-default:#305895;
+@brand-primary: #ff4802;
+@brand-success: #ff4802;
+@brand-info: #305895;
+@brand-warning:#305895;
+@brand-danger:#305895;
+
+@body-bg :#fff;
+
+@link-color: #305895;
+@link-hover-color:#305895;
+@link-hover-decoration:#305895;
+
+@font-family-sans-serif:sans-serif,"Microsoft YaHei";
+@font-family-yahei:"Microsoft YaHei";
+@font-family-serif:sans-serif;
+@font-family-base:@font-family-sans-serif;
+
+@font-size-base:14px;
+@font-size-large:18px;
+@font-size-small:12px;
+@font-size-h1:36px;
+@font-size-h2:30px;
+@font-size-h3:24px;
+@font-size-h4:@font-size-large;
+@font-size-h5:@font-family-base;
+@font-size-h6:@font-size-small;
+
+@line-height-base:        1.428571429;
+
+@padding-base-vertical:6px;
+@padding-base-horizontal:12px;
+
+@padding-large-vertical:6px;
+@padding-large-horizontal:12px;
+
+@padding-small-vertical:6px;
+@padding-small-horizontal:12px;
+
+@border-radius-base:4px;
+@border-radius-large:6px;
+@border-radius-small:3px;
+@border-radius-50:50%;
+
+@table-cell-padding:8px;
+
+@table-bg: transparent;
+@table-border-color:#999;
+
+@btn-font-weight: normal;
+@btn-default-color:#fff;
+@btn-default-bg:@brand-default;
+
+@btn-primary-color:#fff;
+@btn-primary-bg:@brand-primary;
+
+@screen-base: 1000px;
+
+@grid-columns: 12;
+@grid-gutter-width:20px;
+
+@navbar-height:40px;
+@navbar-default-color:#fff;
+@navbar-default-bg:@brand-default;
+@navbar-default-link-color:#fff;
+@navbar-default-link-hover-color:#fff;
+@navbar-default-link-hover-bg:@brand-default;
+@navbar-default-link-disabled-color:#cc;
+@navbar-default-link-disabled-bg:transparent;
+
+
+@pagination-color:@link-color;
+@pagination-bg:#fff;
+@pagination-border:#ddd;
+@pagination-hover-color:@link-hover-color;
+@pagination-disabled-color:#ccc;
+
+
+@list-link-color:@link-color;
+@list-link-hover-color:@link-hover-color;
+
+
+@panel-bg:#fff;
+@panel-body-padding:10px;
+@panel-header-padding:10px 15px;
+@panel-footer-padding:@panel-header-padding;
+@panel-default-text:#fff;
+@panel-default-border:@brand-default;
+@panel-primary-text:#fff;
+@panel-primary-border:@brand-primary;
+
+
+@badge-color:fff;
+@badge-link-hover-color:#fff;
+@badge-bg:@brand-default;
+@badge-font-weight:bold;
+@badeg-border-radius:50%;
+
+
+
+.font-variant(@color;@size;@family){
+  color: @color;
+  font-size: @size;
+  font-family: @family
+}
+//
+//// untilitie.less
+//.pull-right {
+//  float: right !important;
+//}
+//.pull-left {
+//  float: left !important;
+//}
+//
+//.hide,.hidden {
+//  display: none !important;
+//}
+//.show {
+//  display: block !important;
+//}
+//.invisible {
+//  visibility: hidden;
+//}
+//
+//
+//// panel.less
+//
+//.panel {
+//  margin-bottom: 20px;
+//  background-color: @panel-bg;
+//  border: 1px solid transparent;
+//}
+//
+//.panel-head {
+//  padding: 9px 0;
+//  border-bottom: 1px solid transparent
+//}
+//
+//.panel-body {
+//  padding: @panel-body-padding;
+//}
+//
+//.panel-title {
+//  margin: 0;
+//  font-size: 100%;
+//  font-weight: 900;
+//  color: inherit;
+//
+//  a {
+//    color: inherit
+//  }
+//}
+//
+//
+//.panel-footer {
+//  padding: @panel-footer-padding;
+//  background-color: #f5f5f5;
+//  border-top: 1px solid #ddd
+//}
+//
+//.panel-left {
+//  float: left;
+//}
+//
+//.panel-right {
+//  float: right;
+//}
+//
+//.panel-right a {
+//  font-size: @font-size-small;
+//  color: @link-color;
+//  font-family: @font-family-base;
+//}

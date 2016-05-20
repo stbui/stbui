@@ -1,0 +1,72 @@
+@import "../lib/variables.less";
+
+.article {
+
+  &:after,
+  &:before {
+    content: " ";
+    display: table
+  }
+
+}
+
+.article-head {
+}
+
+.article-body {
+  blockquote {
+    font-family: @font-family-base;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  p {
+    margin: 10px 0;
+    line-height: 1.5;
+  }
+}
+
+.article-title {
+  margin: 0;
+  font-size: 25px;
+  line-height: 1.15;
+  font-weight: 400;
+
+  a {
+    color: inherit;
+    text-decoration: none
+  }
+}
+
+.article-meta {
+  margin: 10px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #999
+}
+
+.article-lead {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  background: #f9f9f9;
+  padding: 10px
+}
+
+.article-divider {
+  margin-bottom: 24px;
+  border-color: #eee
+}
+
+.article, .article-body, .article-body {
+  ::selection {
+    background-color: #FF4802;
+    color: #fff;
+  }
+}

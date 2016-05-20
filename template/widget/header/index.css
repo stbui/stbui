@@ -1,0 +1,42 @@
+.header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /*background-color: #f7f7f7;*/
+    /*border-bottom: 1px solid #dfdfdf;*/
+    /*border-top: 2px solid #ff4901;*/
+}
+
+.header-wrapper {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+    height: 32px;
+    /*overflow: hidden;*/
+    position: relative;
+    width: 1000px;
+    z-index: 999;
+}
+
+.header-sticky {
+    position: fixed !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    _top: expression(eval(document.documentElement.scrollTop));
+    z-index: 999;
+}
+
+.header-default {
+    background-color: #305895;
+}
+.header-default .header-wrapper {
+    height: 40px;
+}
+.header-primary {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #dfdfdf;
+    border-top: 2px solid #ff4901;
+}

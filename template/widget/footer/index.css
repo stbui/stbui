@@ -1,0 +1,129 @@
+.footer {
+    border-top: 2px solid #2f5895;
+    padding-top: 10px;
+}
+
+.footer .col2 {
+    border-left: 1px solid #ddd;
+    height: 140px;
+    padding-left: 15px;
+    *width: 130px;
+}
+
+.footer li {
+    list-style: none;
+    padding: 5px 0;
+}
+
+.footer a {
+    color: #676767;
+}
+
+.footer a:hover {
+    color: #c00;
+}
+
+.footer h4 {
+    font-weight: 900;
+    line-height: 2.1;
+}
+
+.footer .smallwidth {
+    width: 100px;
+}
+
+.footer .largewidth {
+    width: 165px;
+}
+
+.footer-copy {
+    color: #333;
+    text-align: center;
+    margin: 0;
+    height: 24px;
+    line-height: 24px;
+}
+
+.footer-contact {
+    height: 30px;
+    line-height: 30px;
+    padding: 0;
+    text-align: center;
+    background-color: #2f5895;
+}
+
+.footer-logo {
+}
+
+.footer-logo a {
+    width: 110px;
+    height: 50px;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0 4px;
+}
+
+.footer-contanier {
+    width: 840px;
+    margin: 0 auto;
+}
+
+.footer-contanier a {
+    width: 84px;
+    color: #fff;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.footer-contanier a:hover {
+    background-color: #0b3472;
+    color: #fff;
+}
+
+.footer .border-no {
+    border: 0;
+}
+
+.icon-home,
+.icon-qcode,
+.icon-text,
+.icon-wb,
+.icon-wx,
+.icon-icp,
+.icon-gongwang {
+    background: url("http://cmsjs.eastmoney.com/public/footer/images/footer.png") no-repeat;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.icon-home {
+    background-position: -40px -232px;
+}
+
+.icon-qcode {
+    background-position: 15px -100px;
+    width: 140px;
+    height: 110px;
+}
+
+.icon-text {
+    background-position: -60px -231px;
+}
+
+.icon-wb {
+    background-position: 0 -232px;
+}
+
+.icon-wx {
+    background-position: -20px -232px;
+}
+
+.icon-icp {
+    background-position: -190px -350px;
+}
+
+.icon-gongwang {
+    background-position: -188px -374px;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "stbui",
+  "version": "1.0.0",
+  "description": "stbui",
+  "scripts": {
+    "start": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build",
+    "build": "webpack --progress --colors --watch",
+    "watch": "webpack-dev-server --hot --progress --colors",
+    "dist": "NODE_ENV=production webpack --progress --colors"
+  },
+  "author": "stbui.com",
+  "license": "ISC",
+  "devDependencies": {
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.16.1"
+  }
+}

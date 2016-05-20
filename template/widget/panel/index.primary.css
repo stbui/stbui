@@ -1,0 +1,23 @@
+.primary-panel {
+    border: 0;
+}
+
+.primary-panel .panel-head {
+    border-width: 3px;
+    border-color: #305895;
+    _padding: 0;
+    font-size: 18px;
+}
+
+.primary-panel .panel-body {
+
+}
+
+.primary-panel .panel-title {
+    padding: 11px 10px;
+    border-bottom: 3px solid #f00;
+    color: #ff4802;
+    _top: 3px;
+    _position: relative;
+    /*font-family: "Microsoft YaHei";*/
+}
