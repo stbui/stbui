@@ -1,110 +1,88 @@
-require('./index.css');
+function Swiper(element,options) {
+    this.element = (typeof element == 'string') ? $(element) : element;
+    this.itemSlide = this.element.find('.swiper-slide');
 
-var swiper = {
-    index: 0,
-    num: 5,
-    data: {},
-    cPage: 0,
-    tPage: 0,
-    endIndex: 0,
+    this.options = {
+        index:0,
+        cPage: 0,
+        total:0,
+        tPage: 0,
+        endIndex: 0,
+        delay:1,
+        onStart: null,
+        onEnd: null,
+        onCurrent: null,
+    };
+
+    $.extend(this.options, this.options, options);
+
+    this.init();
+}
+
+Swiper.prototype = {
     init: function () {
+        this.options.cPage = 0;
+        this.options.total = this.itemSlide.length
+        this.options.tPage = this.options.total;
+        this.options.endIndex = this.options.total;
 
-        this.element = document.getElementsByClassName('swiper')[0];
-        this.wrapper = document.getElementsByClassName('swiper-wrapper')[0];
-        this.item = this.wrapper.getElementsByClassName('swiper-slide');
-
-        this.tPage = Math.ceil(this.item.length / this.num);
-        this.tPage = 5;
-        this.endIndex = (this.item.length - 1 + this.num) % this.num;
-
-
-        this.goIndex();
-    },
-    digitalItem: function (e) {
-        this.pagination = document.getElementsByClassName('swiper-pagination-bullet');
-
-        this.removeClass(this.pagination);
-
-        var name = ' active';
-        var className = this.pagination[this.cPage].className;
-        className += name;
-
-        this.pagination[this.cPage].className = className;
-    },
-    goIndex: function () {
-        var self = this;
-
-        $('.swiper-pagination-bullet').on('mouseover', function () {
-            var $this = $(this).index();
-            self.index = $this;
-            self.cPage = $this;
-            self.render();
-
-            self.pause();
-        }).mouseleave(function (e) {
-            self.start();
-        });
-
+        this.start();
     },
     render: function () {
-        this.removeClass();
-        //this.addClass();
+        var self = this;
 
-        var name = ' active';
-        var className = this.item[this.cPage].className;
-        className += name;
+        if ($.isFunction(self.options.onCurrent)) {
+            this.options.onCurrent(self);
+        } 
 
-        this.item[this.cPage].className = className;
-
-
-        this.digitalItem();
-
-    },
-    pause: function() {
-        clearInterval(this.timer);
-    },
-    change: function (index) {
-        this.index = (this.index + index + this.num) % this.num;
-        this.setPage(index);
-    },
-    setPage: function (index) {
-        if (this.cPage == this.tPage - 1 && index == 1) {
-            this.cPage = 0;
-        } else {
-            this.cPage += index;
-        }
-
-        this.render();
+        self.itemSlide.removeClass('active').eq(self.options.cPage).addClass('active');
+        self.element.find('.swiper-pagination-bullet').removeClass('active').eq(self.options.cPage).addClass('active');
     },
     start: function () {
         var self = this;
-        this.timer = setInterval(function () {
+
+        self.options.onStart && self.options.onStart(self);
+        
+        self.pause();
+        self.timer = setInterval(function () {
             self.change(1);
-        }, 2500);
+        }, self.options.delay*1000);
     },
-    addClass: function (element, name) {
-        element = element || this.item;
-        name = name || 'active';
+    change: function (index) {
+        var options = this.options;
 
-        var className = element[this.cPage].className;
-        className += name;
-
-        element[this.cPage].className = className;
+        options.index = (options.index + index + options.total) % options.total;
+        this.setPage(index);
     },
-    removeClass: function (id, name) {
-        var element = id || this.item;
-        var key = name || 'active';
+    setPage: function (index) {
+        var options = this.options;
 
-        for (var i in element) {
-            var item = element[i];
-            if (!item.className) break;
-
-            if (item.className.indexOf(key)) {
-                item.className = item.className.replace(key, '').replace(/\s+/g, '');
-            }
+        if (options.cPage == options.tPage - 1 && index == 1) {
+            this.options.onEnd && this.options.onEnd();
+            options.cPage = 0;
+        } else {
+            options.cPage += index;
         }
+        
+        this.render();
+    },
+    pause: function () {
+        clearInterval(this.timer);
     }
-};
+}
 
-swiper.init();
-swiper.start();
+
+var swiper = new Swiper('.swiper', {
+    onStart: function (_this) {
+        var self = _this;
+        $(".swiper-pagination-bullet").on("mouseover", function () {
+            self.pause();
+        }).mouseleave(function () {
+            self.start();
+        })
+    },
+    onCurrent: function (_this) {
+        var self = _this;
+        self.itemSlide.eq(self.options.cPage).css('background', '#fff');
+    }
+});

@@ -1,0 +1,107 @@
+@import "../lib/variables.less";
+
+.navbar {
+  height: 40px;
+  overflow: hidden;
+
+  &:after,
+  &:before {
+    content: " ";
+    display: table;
+  }
+
+  li {
+    display: inline;
+    position: relative;
+    float: left;
+    white-space: nowrap;
+    line-height: 40px;
+    //padding-left: 10px;
+    //padding-right: 10px;
+
+    &.active a,
+    &.active a:focus,
+    &.active a:hover {
+      text-decoration: none;
+    }
+
+    &.disabled a,
+    &.disabled a:focus,
+    &.disabled a:hover {
+      color: #999;
+      text-decoration: none;
+      background-color: transparent;
+      cursor: not-allowed
+    }
+
+    a {
+      padding-left: 10px;
+      padding-right: 10px;
+      display: block;
+      font-size: @font-size-base;
+
+      &:focus,
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.navbar-inline {
+  display: inline-block;
+}
+
+.navbar-default {
+  background-color: #305895;
+
+  li {
+
+    a {
+      color: @white;
+
+      &:focus,
+      &:hover {
+        color: #f00;
+      }
+
+    }
+
+  }
+}
+
+.navbar-border {
+  border: 1px solid #3A5E95;
+  border-top: 0;
+}
+
+.navbar-border li:first-child {
+  border-right: 1px solid #3A5E95;
+}
+
+.navbar-brand li:first-child {
+  border-right: 1px solid #fff;
+}
+
+.navbar-border li:first-child a {
+  color: #000;
+  font-weight: 900;
+}
+
+.navbar-brand li:first-child a {
+  font-weight: 900;
+}
+
+
+/*ie hack*/
+//.navbar-brand li {
+//  _border-right-width: expression(this.previousSibling==null?"1px":"");
+//  _border-right-style: expression(this.previousSibling==null?"solid":"");
+//  _border-right-color: expression(this.previousSibling==null?"#fff":"");
+//}
+//
+//.navbar-border li {
+//  _border-right-width: expression(this.previousSibling==null?"1px":"");
+//  _border-right-style: expression(this.previousSibling==null?"solid":"");
+//  _border-right-color: expression(this.previousSibling==null?"#3A5E95":"");
+//}

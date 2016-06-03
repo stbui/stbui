@@ -1,26 +1,16 @@
-require("../../widget/lib/base.css");
+require("../../widget/lib/stbui.less");
 
-require("../../widget/panel/index.css");
-require("../../widget/panel/index.primary.css");
-require("../../widget/panel/index.default.css");
+//require("../../widget/tabs/index.css");
+//require("../../widget/thumbnail/index.css");
+//require("../../widget/search/index.css");
+//require("../../widget/navbar/index.css");
+//require("../../widget/dropdown/index.css");
 
-require("../../widget/table/index.css");
-require("../../widget/tabs/index.css");
-require("../../widget/list/index.css");
-require("../../widget/thumbnail/index.css");
-require("../../widget/button/index.css");
-require("../../widget/search/index.css");
-require("../../widget/dropdown/index.css");
-require("../../widget/article/index.css");
-require("../../widget/navbar/index.css");
-
-require('../../widget/alert/index.css');
 //
-require('./index.css');
+//require('./index.css');
 
-var dropdown = require('../../widget/dropdown/index');
-var tabs = require('../../widget/tabs/index');
-
-new dropdown();
-//new tabs();
-
+//var dropdown = require('../../widget/dropdown/index');
+//var tabs = require('../../widget/tabs/index');
+//
+//new dropdown();
+////new tabs();

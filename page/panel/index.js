@@ -1,3 +1,3 @@
-require("../../widget/panel/index.less");
+require("../../widget/lib/stbui.less");
 
 require('./index.css');
