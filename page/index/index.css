@@ -1,0 +1,94 @@
+/*@import url("../../widget/lib/base.css?__inline");*/
+
+/*@import url("../../widget/panel/index.css?__inline");*/
+/*@import url("../../widget/panel/index.primary.css?__inline");*/
+/*@import url("../../widget/panel/index.default.css?__inline");*/
+
+/*@import url("../../widget/table/index.css?__inline");*/
+/*@import url("../../widget/tabs/index.css?__inline");*/
+/*@import url("../../widget/list/index.css?__inline");*/
+/*@import url("../../widget/thumbnail/index.css?__inline");*/
+/*@import url("../../widget/button/index.css?__inline");*/
+/*@import url("../../widget/search/index.css?__inline");*/
+/*@import url("../../widget/dropdown/index.css?__inline");*/
+/*@import url("../../widget/article/index.css?__inline");*/
+
+.index-list li a {
+    font-size: 18px;
+}
+
+.index-article-title {
+    font-size: 22px;
+    color: #2F5896;
+    font-weight: 900;
+    font-family: "Microsoft YaHei";
+    padding: 0 0 0 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.index-article-subtitle {
+    /*padding: 20px 0;*/
+    /*line-height: 2;*/
+}
+
+.index-article-subtitle li {
+    display: inline;
+    float: left;
+    margin-left: 20px;
+    max-width: 40%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 10px 0;
+}
+
+.index-article-subtitle a {
+    font-size: 16px;
+
+}
+
+.index-thumbnail {
+    background-color: #E5E5E5;
+    border: 0;
+}
+
+.index-quick-panel {
+
+}
+
+.index-quick-panel .panel-head {
+    border-top: 3px solid #2F5896;
+}
+
+.index-quick-panel .panel-title {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.index-study-article {
+
+}
+
+.index-study-article li {
+    padding: 7px 0;
+    margin-left: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /*overflow: hidden;*/
+}
+
+b {
+    height: 15px;
+    float: left;
+    margin: 13px 0;
+    width: 1px;
+    background-color: #2f5895;
+    border-right: 1px solid #758FB5;
+}
+
+
+body {
+    background: url("images/bg.jpg");
+}

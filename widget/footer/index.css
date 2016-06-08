@@ -1,0 +1,159 @@
+.footer-contanier {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+    clear: both;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    border-top: 2px solid #305895;
+}
+.footer-info {
+    text-align: center;
+    margin-bottom: 5px;
+}
+.footer-sitemap {
+    margin-top: 10px;
+}
+.footer-sitemap .col2 {
+    border-left: 1px solid #ddd;
+    height: 140px;
+    padding-left: 15px;
+    *width: 130px;
+}
+.footer-sitemap .col2:first-child {
+    border-left: 0;
+    text-align: center;
+}
+.footer-sitemap a {
+    color: #676767;
+}
+.footer-sitemap h4 {
+    font-weight: 900;
+    line-height: 2.1;
+}
+.footer-sitemap ul li a {
+    color: #676767;
+    line-height: 24px;
+}
+.footer-links {
+    text-align: center;
+    margin: 22px 0;
+    font-size: 18px;
+    color: #fff;
+}
+.footer-links a:hover {
+    color: #ff4900;
+}
+.footer-nav {
+    text-align: center;
+    background-color: #305895;
+}
+.navbar-footer {
+    height: 30px;
+}
+.navbar-footer li {
+    line-height: 34px;
+}
+.navbar-footer li a {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 12px;
+}
+.navbar-footer li a:hover {
+    color: #fff;
+    background-color: #0b3472;
+}
+.footer-logo {
+    text-align: center;
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+.footer-logo-n1,
+.footer-logo-n2,
+.footer-logo-n3,
+.footer-logo-n4,
+.footer-logo-n5,
+.footer-logo-n6 {
+    width: 110px;
+    height: 55px;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0 4px;
+    background-image: url("http://cmsjs.eastmoney.com/public/footer/images/footer.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+}
+.footer-logo-n1 {
+    background-position: 0 0;
+}
+.footer-logo-n2 {
+    background-position: -130px 0;
+}
+.footer-logo-n3 {
+    background-position: 0 -50px;
+}
+.footer-logo-n4 {
+    width: 50px;
+    background-position: -130px -50px;
+}
+.footer-logo-n5 {
+    width: 50px;
+    background-position: -190px -50px;
+}
+.footer-logo-n6 {
+    width: 186px;
+    background-position: 0 -358px;
+}
+.footer-default {
+    background-color: #305895;
+    font-family: "Microsoft YaHei";
+}
+.footer-default a {
+    color: #fff;
+}
+.footer-default a:hover {
+    color: #ff4900;
+    text-decoration: none;
+}
+.footer-default .footer-info {
+    color: #fff;
+}
+/* icon */
+.icon-home,
+.icon-qcode,
+.icon-text,
+.icon-wb,
+.icon-wx,
+.icon-icp,
+.icon-gongwang {
+    background: url("http://cmsjs.eastmoney.com/public/footer/images/footer.png") no-repeat;
+    display: inline-block;
+    width: 16px;
+    height: 20px;
+    vertical-align: middle;
+}
+.icon-home {
+    background-position: -40px -232px;
+}
+.icon-qcode {
+    background-position: 15px -100px;
+    width: 140px;
+    height: 110px;
+}
+.icon-text {
+    background-position: -60px -231px;
+}
+.icon-wb {
+    background-position: 0 -232px;
+}
+.icon-wx {
+    background-position: -20px -232px;
+}
+.icon-icp {
+    background-position: -190px -350px;
+}
+.icon-gongwang {
+    background-position: -188px -374px;
+}

@@ -1,0 +1,49 @@
+@import "../lib/variables.less";
+
+.@{stbui}tag, .@{stbui}badge {
+  display: inline-block;
+  min-width: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: @black;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  padding: 3px 7px;
+  border-radius: 8px;
+}
+
+.tag-variant(default; @brand-default);
+.tag-variant(primary; @brand-primary);
+.tag-variant(success; @brand-success);
+.tag-variant(warning; @brand-warning);
+
+.tag-variant(@theme;@color;) {
+
+  .@{stbui}tag-@{theme} {
+    color: @color;
+    border: 1px solid @color;
+  }
+
+  .@{stbui}badge-@{theme} {
+    color: @white;
+    background-color: @color;
+  }
+}
+
+.badge-size-variant(sm; 24px; 14px);
+.badge-size-variant(md; 28px; 18px);
+.badge-size-variant(lg; 32px; 22px);
+
+.badge-size-variant(@theme;@size;@font-size) {
+  .@{stbui}badge-@{theme} {
+    border-radius: 50%;
+    line-height: @size;
+    width: @size;
+    height: @size;
+    font-size: @font-size;
+    margin: 0 5px;
+    padding: 0;
+  }
+}

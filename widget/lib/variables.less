@@ -1,0 +1,135 @@
+//@component-path: ../lib/;
+@stbui: ~"stb-";
+
+@brand-default: #305895;
+@brand-primary: #ff4802;
+@brand-success: #008000;
+@brand-info: #f2fafd;
+@brand-warning: #ff9212;
+@brand-danger: #305895;
+@brand-disabled: #999;
+@brand-active: #999;
+
+@black: #000;
+@white: #fff;
+@body-bg : @white;
+@border: #ddd;
+
+@screen-base: 1000px;
+
+@grid-columns: 12;
+@grid-gutter-width: 20px;
+
+@link-color: #315796;
+@link-hover-color: #ff4900;
+@link-hover-decoration: #ff4900;
+
+@font-family-sans-serif: sans-serif, "Microsoft YaHei";
+@font-family-yahei: "Microsoft YaHei";
+@font-family-serif: sans-serif;
+@font-family-base: @font-family-sans-serif;
+
+@font-size-base: 14px;
+@font-size-large: 18px;
+@font-size-small: 12px;
+@font-size-h1: 36px;
+@font-size-h2: 30px;
+@font-size-h3: 24px;
+@font-size-h4: @font-size-large;
+@font-size-h5: @font-family-base;
+@font-size-h6: @font-size-small;
+
+@line-height-base: 1.428571429;
+
+@padding-base-vertical: 6px;
+@padding-base-horizontal: 12px;
+
+@padding-large-vertical: 6px;
+@padding-large-horizontal: 12px;
+
+@padding-small-vertical: 6px;
+@padding-small-horizontal: 12px;
+
+@border-radius-base: 4px;
+@border-radius-large: 6px;
+@border-radius-small: 3px;
+@border-radius-50: 50%;
+
+@table-cell-padding: 8px;
+
+@table-bg: transparent;
+@table-border-color: #999;
+
+@btn-font-weight: normal;
+@btn-default-color: @white;
+@btn-default-bg: @brand-default;
+
+@btn-primary-color: @white;
+@btn-primary-bg: @brand-primary;
+
+@navbar-height: 40px;
+@navbar-default-color: @white;
+@navbar-default-bg: @brand-default;
+@navbar-default-link-color: @white;
+@navbar-default-link-hover-color: @white;
+@navbar-default-link-hover-bg: @brand-default;
+@navbar-default-link-disabled-color: #ccc;
+@navbar-default-link-disabled-bg: transparent;
+
+@pagination-color: @link-color;
+@pagination-bg: @white;
+@pagination-border: #ddd;
+@pagination-hover-color: @link-hover-color;
+@pagination-disabled-color: #ccc;
+
+@list-link-color: @link-color;
+@list-link-hover-color: @link-hover-color;
+
+@panel-bg: @white;
+@panel-body-padding: 10px;
+@panel-header-padding: 10px 15px;
+@panel-footer-padding: @panel-header-padding;
+@panel-default-text: @white;
+@panel-default-border: @brand-default;
+@panel-primary-text: @white;
+@panel-primary-border: @brand-primary;
+
+@badge-color: @white;
+@badge-link-hover-color: @white;
+@badge-bg: @brand-default;
+@badge-font-weight: bold;
+@badge-border-radius: 50%;
+
+@z-index-base: 1000;
+@z-index-header: @z-index-base+100;
+@z-index-footer: @z-index-base;
+
+.font-variant(@color;@size;@family) {
+  color: @color;
+  font-size: @size;
+  font-family: @family
+}
+
+.clearfix(){
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after{
+    clear:both;
+  }
+
+}
+
+.center-bock() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.size(@width;@height) {
+  width:@width;
+  height: @height;
+}

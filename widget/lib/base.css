@@ -1,0 +1,120 @@
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html * {
+    outline: 0;
+    zoom: 1;
+}
+
+html button::-moz-focus-inner {
+    border-color: transparent !important;
+}
+
+body {
+    color: #333;
+    background: #fff;
+    font-size: 12px;
+    font-family: sans-serif;
+    line-height: 1.428571429;
+}
+
+button, select, input, textarea {
+    font-size: 12px;
+    font-family: sans-serif;
+    line-height: 1.428571429;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0;
+    padding: 0;
+}
+
+input, select, textarea {
+    font-size: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-size: 30px;
+    line-height: 36px;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 36px;
+}
+
+h3 {
+    line-height: 27px;
+    font-size: 18px;
+}
+
+h4 {
+    line-height: 18px;
+    font-size: 14px;
+}
+
+h5 {
+    line-height: 18px;
+    font-size: 12px;
+}
+
+h6 {
+    line-height: 18px;
+    font-size: 11px;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    /*font-weight: 500;*/
+    line-height: 1.1;
+    color: inherit;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    color: #315796;
+    background-color: transparent;
+}
+
+a:active,
+a:hover {
+    text-decoration: underline;
+    color: #FF4900;
+}
+
+img {
+    outline: none;
+    border: 0;
+
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.pull-right {
+    float: right !important
+}
+
+.pull-left {
+    float: left !important
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

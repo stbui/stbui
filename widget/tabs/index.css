@@ -1,0 +1,143 @@
+.tabs {
+    position: relative;
+    overflow: hidden;
+    color: #000;
+}
+
+.tabs-head {
+    position: relative;
+    width: 100%;
+    height: 47px;
+    /*margin-bottom: 15px;*/
+    /*border-bottom: 1px solid #2f5895;*/
+    z-index: 1;
+    _height: auto;
+}
+
+.tabs-list {
+    /*float: left;*/
+    /*position: relative;*/
+    margin-left: 1px;
+    _margin-left: 0;
+    z-index: 1;
+}
+
+.tabs-list li {
+    float: left;
+    position: relative;
+    top: 5px;
+    border-top: 1px solid #BBD4E8;
+    border-left: 1px solid #BBD4E8;
+    border-right: 1px solid #BBD4E8;
+    padding: 10px;
+    margin-left: -1px;
+    list-style: none;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 2;
+}
+
+.tabs-list li.active {
+    /*position: relative;*/
+    top: 5px;
+    padding-bottom: 10px;
+    border: 1px solid #2F5895;
+    /*border-bottom: none;*/
+    background-color: #fff;
+
+    z-index: 3;
+    _margin-left: 0;
+}
+
+.tabs-more {
+    float: right;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.tabs-more a {
+    display: none;
+}
+
+.tabs-more a.active {
+    display: block;
+    _float: right;
+}
+
+.tabs-content {
+
+}
+
+.tabs-content .tabs-panel {
+    color: #000;
+    display: none;
+}
+
+.tabs-content .tabs-panel.active {
+    display: block;
+}
+
+.tabs-default .tabs-head {
+    border-bottom: 2px solid #2f5895;
+}
+
+.tabs-default .tabs-list li {
+    border-top: 1px solid #BBD4E8;
+    border-left: 1px solid #BBD4E8;
+    border-right: 1px solid #BBD4E8;
+    font-size: 18px;
+}
+
+.tabs-default .tabs-list li.active {
+    border: 1px solid #2F5895;
+    border-bottom: 0;
+    background-color: #fff;
+    color: #000;
+}
+
+.tabs-default .tabs-content {
+    border: 1px solid #2f5895;
+    border-top: 0;
+    color: #000;
+}
+
+.tabs-default .tabs-content .tabs-panel {
+    color: #000;
+}
+
+/**/
+.tabs-stacked {
+
+}
+
+.tabs-stacked .tabs-head {
+    width: 112px;
+    height: 350px;
+    overflow: hidden;
+}
+
+.tabs-stacked .tabs-content {
+    position: absolute;
+    top: 10px;
+    left: 120px;
+}
+
+.tabs-stacked .tabs-head li {
+    width: 100%;
+
+    background-color: #eee;
+    border: 0;
+    margin: 5px 0;
+}
+
+.tabs-stacked .tabs-head li a {
+    color: #000;
+}
+
+.tabs-stacked .tabs-head li.active,
+.tabs-stacked .tabs-head li.active a {
+    color: #fff;
+    background-color: #2F5895;
+    text-decoration: none;
+}
+

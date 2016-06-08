@@ -1,0 +1,23 @@
+.accordion {
+    width: 400px;
+}
+
+.accordion-item {
+}
+
+.accordion-title {
+    padding: 12px 9.6px;
+    cursor: default;
+    background-color: #eee;
+    color: #0e90d2;
+}
+
+.accordion-body {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+.accordion-content {
+    padding: 12px 9.6px;
+}
