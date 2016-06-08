@@ -1,0 +1,133 @@
+@import "../lib/variables.less";
+
+.@{stbui}tabs {
+  position: relative;
+  overflow: hidden;
+}
+
+.@{stbui}tabs-head {
+  position: relative;
+  width: 100%;
+  height: 47px;
+  z-index: 1;
+  _height: auto;
+}
+
+.@{stbui}tabs-list {
+  position: relative;
+  margin-left: 1px;
+  _margin-left: 0;
+  z-index: 1;
+
+  li {
+    float: left;
+    position: relative;
+    top: 5px;
+    border-top: 1px solid #BBD4E8;
+    border-left: 1px solid #BBD4E8;
+    border-right: 1px solid #BBD4E8;
+    padding: 7px 10px;
+    margin-left: -1px;
+    cursor: pointer;
+    font-size: @font-size-base;
+    z-index: 2;
+
+    &.active {
+      top: 5px;
+      padding-bottom: 9px;
+      border: 1px solid @brand-info;
+      z-index: 3;
+      _margin-left: 0;
+    }
+  }
+}
+
+.@{stbui}tabs-more {
+  float: right;
+  margin-right: 10px;
+  margin-top: 15px;
+
+  a {
+    display: none;
+    &.active {
+      display: block;
+      _float: right;
+    }
+  }
+}
+
+.@{stbui}tabs-content {
+
+  .@{stbui}tabs-panel {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .@{stbui}table {
+    margin-top: 0;
+  }
+}
+
+.@{stbui}tabs-default {
+
+  .@{stbui}tabs-head {
+    border-bottom: 2px solid @brand-default;
+  }
+
+  .@{stbui}tabs-list li {
+    font-size: @font-size-large;
+
+    &.active {
+      border: 1px solid @brand-default;
+      border-bottom: 0;
+      background-color: @white;
+    }
+  }
+
+  .@{stbui}tabs-content {
+    border: 1px solid @brand-default;
+    border-top: 0;
+
+    .@{stbui}tabs-panel {
+    }
+  }
+
+}
+
+/**/
+.@{stbui}tabs-stacked {
+  .@{stbui}tabs-head {
+    width: 112px;
+    height: 350px;
+    overflow: hidden;
+
+    li {
+      width: 100%;
+
+      background-color: #eee;
+      border: 0;
+      margin: 5px 0;
+
+      a {
+        color: #000;
+      }
+
+      &.active,
+      &.active a {
+        color: #fff;
+        background-color: #2F5895;
+        text-decoration: none;
+      }
+    }
+
+  }
+
+  .@{stbui}tabs-content {
+    position: absolute;
+    top: 10px;
+    left: 120px;
+  }
+}
