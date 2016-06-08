@@ -1,6 +1,6 @@
 @import "../lib/variables.less";
 
-.tag, .badge {
+.@{stbui}tag, .@{stbui}badge {
   display: inline-block;
   min-width: 10px;
   font-size: 12px;
@@ -21,12 +21,12 @@
 
 .tag-variant(@theme;@color;) {
 
-  .tag-@{theme} {
+  .@{stbui}tag-@{theme} {
     color: @color;
     border: 1px solid @color;
   }
 
-  .badge-@{theme} {
+  .@{stbui}badge-@{theme} {
     color: @white;
     background-color: @color;
   }
@@ -37,7 +37,7 @@
 .badge-size-variant(lg; 32px; 22px);
 
 .badge-size-variant(@theme;@size;@font-size) {
-  .badge-@{theme} {
+  .@{stbui}badge-@{theme} {
     border-radius: 50%;
     line-height: @size;
     width: @size;

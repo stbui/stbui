@@ -1,6 +1,6 @@
 @import "../lib/variables.less";
 
-.btn {
+.@{stbui}btn {
   display: inline-block;
   padding: 6px 12px;
   font-size: @font-size-base;
@@ -18,7 +18,7 @@
 .btn-variant(warning; @brand-warning);
 
 .btn-variant(@theme;@color) {
-  .btn-@{theme} {
+  .@{stbui}btn-@{theme} {
     color: @white;
     background-color: @color;
     border-color: @color;
@@ -39,12 +39,12 @@
 .btn-size-variant(lg; @font-size-large);
 
 .btn-size-variant(@theme;@font-size) {
-  .btn-@{theme} {
+  .@{stbui}btn-@{theme} {
     font-size: @font-size;
   }
 }
 
-.btn-block {
+.@{stbui}btn-block {
   display: block;
   width: 100%;
 }

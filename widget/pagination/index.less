@@ -1,6 +1,6 @@
 @import "../lib/variables.less";
 
-.pagination {
+.@{stbui}pagination {
   height: 36px;
   margin: 18px 0;
 
@@ -46,15 +46,15 @@
 
 }
 
-.pagination-centered {
+.@{stbui}pagination-centered {
   text-align: center;
 }
 
-.pagination-right {
+.@{stbui}pagination-right {
   text-align: right;
 }
 
-.pagination .redirect {
+.@{stbui}pagination .redirect {
   margin-left: 10px;
   input {
     width: 34px;
@@ -71,7 +71,7 @@
 .pagination-variant(primary; @brand-primary);
 
 .pagination-variant(@theme; @border-color) {
-  .pagination-@{theme} {
+  .@{stbui}pagination-@{theme} {
 
     ul li {
       a {
@@ -88,7 +88,7 @@
   }
 }
 
-.pagination-sm ul li a {
+.@{stbui}pagination-sm ul li a {
   padding: 0 8px;
   line-height: 22px;
 }
