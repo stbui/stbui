@@ -6,19 +6,56 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 
+const CDN_DOMAIN ='http://127.0.0.1';
 const pagePath = './page';
 const widget = './widget';
-const dist = './dist/';
+const dist = './dist';
+const node_path = __dirname + '/node_modules';
+
+var entry = {};
+function getPlugin() {
+    var APP_LIST = fs.readdirSync(pagePath);
+
+    var plugin = [
+        //new webpack.optimize.UglifyJsPlugin({minimize: true}),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'framework',
+            chunks: APP_LIST,
+            minChunks: 3
+        }),
+        new ExtractTextPlugin('Styles/[name].css?v=[hash]', {
+            allChunks: true,
+            disable: false
+        }),
+
+        new webpack.HotModuleReplacementPlugin()
+    ];
+
+    APP_LIST.forEach(function (v, k) {
+        plugin.push(new HtmlWebpackPlugin({
+            inject: 'body',
+            chunks: ['framework', v],
+            filename: v + '.html',
+            template: pagePath + '/' + v + '/index.html',
+            minify: {
+                removeComments: false,
+                collapseWhitespace: false
+            }
+        }));
+
+        entry[v] = pagePath + '/' + v + '/index.js'
+    });
+
+    return plugin;
+}
+
 
 let config = {
-    entry: {
-        index: pagePath + '/index/index.js'
-    },
+    entry: entry,
     output: {
         path: dist,
-        filename: 'js/[name].[hash].js',
-        //publicPath: '../',
-        chunkFilename: 'js/[id].js'
+        filename: 'Scripts/[name].js?v=[hash]',
+        chunkFilename: 'Scripts/[id].js'
     },
     module: {
         loaders: [
@@ -36,47 +73,14 @@ let config = {
             }
             , {
                 test: /\.(png|jpg|gif)$/,
-                loader: 'url-loader?limit=8192&name=./img/[hash].[ext]'
+                loader: 'url-loader?limit=8192&name=/img/[hash].[ext]'
             }
-            //, {
-            //    test: /\.html$/,
-            //    loader: "html?attrs=img:src img:data-src"
-            //}
         ]
     },
-    plugins: [
-        //new webpack.ProvidePlugin({
-        //    $: "jquery",
-        //    jQuery: "jquery",
-        //    "window.jQuery": "jquery"
-        //}),
-
-        new webpack.optimize.UglifyJsPlugin({minimize: true}),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'framework',
-            chunks: ['index'],
-            minChunks: 3
-        }),
-        new ExtractTextPlugin('css/[name].[hash].css', {
-            allChunks: true,
-            disable: false
-        }),
-        new HtmlWebpackPlugin({
-            inject: 'body',
-            chunks: ['framework', 'index'],
-            filename: 'index.html',
-            template: pagePath + '/index/index.html',
-            minify: {
-                removeComments: true,
-                collapseWhitespace: false
-            }
-        }),
-
-        new webpack.HotModuleReplacementPlugin()
-    ],
+    plugins: getPlugin(),
     devServer: {
         contentBase: './dist/',
-        host: '127.0.0.1',
+        host: '0.0.0.0',
         port: 1111,
         inline: true,
         hot: true
@@ -86,15 +90,12 @@ let config = {
 
 //
 if (fs.existsSync('webpack.config.js')) {
-    let custom = require(path.join(process.cwd(), 'webpack.config.js'));
-    config = custom;
+    config = require(path.join(process.cwd(), 'webpack.config.js'));
 } else if (fs.existsSync('stbui.config.js')) {
-    let custom = require(path.join(process.cwd(), 'stbui.config.js'));
-    config = custom;
+    config = require(path.join(process.cwd(), 'stbui.config.js'));
 } else {
-    // ππΩ®Õ¨ ±Ω´≈‰÷√Œƒº˛…˙≥…µΩœÓƒø÷–
+    // ÊûÑÂª∫ÂêåÊó∂Â∞ÜÈÖçÁΩÆÊñá‰ª∂ÁîüÊàêÂà∞È°πÁõÆ‰∏≠
 }
-
 
 let compiler = webpack(config);
 compiler.run(function (err, stats) {

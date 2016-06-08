@@ -1,21 +1,23 @@
 @import "../lib/variables.less";
 
-.panel {
+.@{stbui}panel {
   margin-bottom: 20px;
-  background-color: #fff;
+  background-color: @white;
   border: 1px solid transparent;
+  *border: 1px solid @white;
 }
 
-.panel-head {
+.@{stbui}panel-head {
+  //padding: 10px;
+  border-bottom: 1px solid transparent;
+  *border-bottom: 1px solid @white;
+}
+
+.@{stbui}panel-body {
   padding: 10px;
-  border-bottom: 1px solid transparent
 }
 
-.panel-body {
-  padding: 10px;
-}
-
-.panel-title {
+.@{stbui}panel-title {
   font-size: 100%;
   font-weight: 900;
   color: inherit;
@@ -25,14 +27,14 @@
   }
 }
 
-.panel-footer {
+.@{stbui}panel-footer {
   padding: 10px;
   background-color: #f5f5f5;
   border-top: 1px solid #ddd
 }
 
-.panel {
-  .table {
+.@{stbui}panel {
+  .@{stbui}table {
     margin-top: 0;
   }
 }
@@ -41,51 +43,53 @@
 .panel-variant(primary; @brand-primary);
 
 .panel-variant(@theme,@background) {
-  .panel-@{theme} {
+  .@{stbui}panel-@{theme} {
     border: 1px solid @background;
 
-    .panel-head {
+    .@{stbui}panel-head {
       background-color: @background;
     }
-    .panel-title {
+    .@{stbui}panel-title {
       font-family: @font-family-yahei;
       font-weight: 900;
-      color: #fff;
+      color: @white;
 
     }
 
-    .panel-body {
+    .@{stbui}panel-body {
 
     }
 
-    .panel-footer {
+    .@{stbui}panel-footer {
 
     }
   }
 }
 
-.panel-striped {
+.@{stbui}panel-striped {
 
+  .@{stbui}panel-head {
+    //padding: 10px 0;
+    border-bottom: 3px solid @brand-default;
+  }
+
+  .@{stbui}panel-title {
+    .font-variant(@brand-primary;@font-size-large;@font-family-yahei);
+    font-weight: 900;
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    bottom: -3px;
+    border-bottom: 3px solid @brand-primary;
+
+  }
+
+  .@{stbui}panel-body {
+  }
+
+  .@{stbui}panel-footer {
+  }
 }
-
-.panel-striped .panel-head {
-  padding: 10px 0;
-  border-bottom: 3px solid @brand-default;
-}
-
-.panel-striped .panel-title {
-  .font-variant(@brand-primary;@font-size-large;@font-family-yahei);
-  font-weight: 900;
-  padding: 10px;
-  border-bottom: 3px solid @brand-primary;
-}
-
-.panel-striped .panel-body {
-}
-
-.panel-striped .panel-footer {
-}
-
 
 .panel-left {
   float: left !important;

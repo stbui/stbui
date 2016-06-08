@@ -13,23 +13,32 @@ html button::-moz-focus-inner {
     border-color: transparent !important;
 }
 
-body, select, input, textarea {
+body {
     color: #333;
     background: #fff;
     font-size: 12px;
-    font-family: "sans-serif";
-    /*line-height: 1.5;*/
+    font-family: sans-serif;
+    line-height: 1.428571429;
 }
 
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
-    margin:0;padding:0;
+button, select, input, textarea {
+    font-size: 12px;
+    font-family: sans-serif;
+    line-height: 1.428571429;
 }
 
-input,select,textarea {
-    font-size:100%;
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0;
+    padding: 0;
 }
 
-li {list-style: none;}
+input, select, textarea {
+    font-size: 100%;
+}
+
+li {
+    list-style: none;
+}
 
 h1 {
     font-size: 30px;
@@ -88,128 +97,6 @@ img {
 
 }
 
-.row {
-    height: auto;
-    overflow: hidden;
-    clear: both;
-    margin-left: -20px;
-    margin-bottom: 7px;
-}
-
-.col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .col9, .col10, .col11, .col12{
-    display: inline;
-    float: left;
-    margin-left: 20px;
-    min-height: 1px;
-}
-
-.alpha {
-    margin-left: 0;
-}
-
-.omega {
-    margin-right: 0;
-}
-
-.wrapper {
-    width: 1000px;
-    margin: 0 auto;
-    padding: 0;
-    clear: both;
-    height: auto;
-    overflow: hidden;
-    margin-top: 20px;
-    position: relative;
-}
-
-.col1 {
-    width: 65px;
-}
-
-.col2, .aside {
-    width: 150px;
-}
-
-.col3 {
-    width: 235px;
-}
-
-.col4 {
-    width: 320px;
-}
-
-.col5 {
-    width: 405px;
-}
-
-.col6 {
-    width: 490px;
-}
-
-.col7 {
-    width: 575px;
-}
-
-.col8 {
-    width: 660px;
-}
-
-.col9 {
-    width: 745px;
-}
-
-.col10, .main {
-    width: 830px;
-}
-
-.col11 {
-    width: 915px;
-}
-
-.col12 {
-    width: 1000px;
-}
-
-/*text */
-.text-12 {font-size: 12px}
-.text-14 {font-size: 14px;}
-.text-16 {font-size: 16px;}
-.text-nowrap {
-    white-space: nowrap;
-}
-
-.text-ellipsis {
-    text-overflow: ellipsis;
-}
-
-.text-truncate {
-    word-wrap: normal;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.text-default {
-    color: #286eb4;
-}
-
-.text-primary {
-    color: #FF4400;
-}
-
-.text-success {
-    /*color: #ff4901;*/
-    color: #008000
-}
-
-.text-warning {
-    color: #FF9212;
-}
-
-.text-center {
-    text-align: center;
-}
-
 .hide {
     display: none;
 }
@@ -225,21 +112,9 @@ img {
 .pull-left {
     float: left !important
 }
-.disabled {
-    color: #999;
-    /*cursor: not-allowed;*/
-    text-decoration: none;
-}
-.active {
-
-}
-
-.clearfix {
-}
 
 .center-block {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-

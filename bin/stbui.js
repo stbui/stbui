@@ -42,13 +42,7 @@ if (subcmd != 'release' && subcmd != 'server') {
     if (bin) {
         spawn(bin, args, {stdio: 'inherit', customFds: [0, 1, 2]});
     } else {
-        program.cwd = process.cwd();
-
-        const webpack = require('../lib/webpack/stbui-webpack');
-        //const webpack = require('../lib/webpack');
-        //webpack(program);
-
-        //program.help();
+        require('../lib/webpack/stbui-webpack');
     }
 } else {
     require('../lib/fis/stbui-fis');

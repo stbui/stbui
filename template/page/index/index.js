@@ -1,3 +1,4 @@
-require("../../widget/lib/base.css");
+require("../../widget/lib/stbui.less");
 
-require('./index.css');
+require("./index.css");
+

@@ -1,6 +1,6 @@
 @import "../lib/variables.less";
 
-.pagination {
+.@{stbui}pagination {
   height: 36px;
   margin: 18px 0;
 
@@ -13,6 +13,8 @@
 
     li {
       display: inline;
+      float: left;
+      position: relative;
 
       a {
         float: left;
@@ -44,19 +46,32 @@
 
 }
 
-.pagination-centered {
+.@{stbui}pagination-centered {
   text-align: center;
 }
 
-.pagination-right {
+.@{stbui}pagination-right {
   text-align: right;
+}
+
+.@{stbui}pagination .redirect {
+  margin-left: 10px;
+  input {
+    width: 34px;
+    height: 22px;
+}
+
+  button {
+    width: 22px;
+    height: 22px;
+  }
 }
 
 .pagination-variant(default; @brand-default);
 .pagination-variant(primary; @brand-primary);
 
 .pagination-variant(@theme; @border-color) {
-  .pagination-@{theme} {
+  .@{stbui}pagination-@{theme} {
 
     ul li {
       a {
@@ -73,6 +88,7 @@
   }
 }
 
-.pagination-lg {
-
+.@{stbui}pagination-sm ul li a {
+  padding: 0 8px;
+  line-height: 22px;
 }

@@ -1,6 +1,6 @@
 @import "../lib/variables.less";
 
-.table {
+.@{stbui}table {
   border-collapse: collapse;
   width: 100%;
   max-width: 100%;
@@ -26,13 +26,13 @@
 
 }
 
-.table-hover {
+.@{stbui}table-hover {
   tbody tr:hover {
     background-color: #ECEBEB;
   }
 }
 
-.table-bordered {
+.@{stbui}table-bordered {
   border: 1px solid #c9c9c9;
 
   thead {
@@ -55,7 +55,7 @@
 .table-theme-variant(primary, @brand-primary);
 
 .table-theme-variant(@state;@background) {
-  .table-hover tbody tr {
+  .@{stbui}table-hover tbody tr {
     td.@{state}:hover,
     &.@{state}:hover td,
     &:hover .@{state} {
@@ -64,14 +64,14 @@
 
   }
 
-  .table tbody tr {
+  .@{stbui}table tbody tr {
     td.@{state},
     &.@{state} td {
       background-color: lighten(@background, 40%);
     }
   }
 
-  .table-@{state} {
+  .@{stbui}table-@{state} {
     border: 1px solid @background;
 
     thead {

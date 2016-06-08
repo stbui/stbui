@@ -1,19 +1,22 @@
 前端集成解决方案
 ======
 
-* 支持 ``fis`` 或 ``webpack`` 构建
 * 所有静态资源自动加 ``md5版本戳``
 * 支持给所有静态资源添加域名前缀
-* 非常易用的自动 ``csssprites``
-* 自动jshint校验js、coffee文件，校验结果为 ``中文`` 显示
-* js、css压缩，压缩时保留require关键字
+* JS 文件的分析、合并、压缩、版本管理
+* CSS 文件的分析、合并、压缩、版本管理
+* HTML 文件分析、压缩、版本管理
+* 入口模块的分析、分块构建、增量构建、合并、压缩、版本管理
+* 静态资源的分析、压缩、版本管理
 * png图片压缩，支持 ``将png24压缩为png8``
 * 内置本地开发调试服务器，支持运行 ``jsp``、``php``
 * 支持使用 ``less``、``es6`` 开发项目
 * 支持文件监听，保存即发布
 * 支持浏览器自动刷新，保存即刷新
 * 可以上传到远端服务器，保存即增量编译上传
-* 超低学习成本，只须记忆 ``3`` 条命令即可完成开发
+* 开发环境使用 cmd 规范
+* 支持分块加载和异步加载
+* 良好的构建工具配套支持
 
 详细用法
 =========
@@ -76,9 +79,51 @@ stbui server
 ## stbui 命令简化
 ```bash
 npm run start
-npm run dev
+npm run bulid
 npm run prd
+```
+
+## webpack
+start
+```bash
+webpack-dev-server --devtool eval --progress --colors --hot --content-base build
+```
+dev
+```bash
+webpack --progress --colors --watch
+```
+
+watch
+```bash
+webpack-dev-server --hot --progress --colors
+```
+prd
+```bash
+NODE_ENV=production webpack --progress --colors
+```
+
+## fis
+start
+```bash
+stbui server start -p 1111 --www ./dist
+```
+dev
+``bash
+stbui release dev -d ./dist
+```
+
+watch
+```bash
+stbui release dev -d ./dist -w -l
+```
+
+prd
+```bash
+stbui release prd -d ./dist
 ```
 
 
 如果使用中遇到什么觉得诡异的地方，欢迎拨打热线电话10086
+
+参考链接
+https://coolie.ydr.me/introduction/coolie/

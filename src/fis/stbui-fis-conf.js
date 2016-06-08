@@ -17,8 +17,7 @@ stbui.hook('commonjs');
 stbui.config.set('project.files', [
     '*.html',
     'page/**',
-    'widget/**',
-    'favicon.ico'
+    'widget/**'
 ]);
 stbui.config.set('project.ignore', [
     'dist/**',
@@ -67,19 +66,31 @@ stbui
     });
 
 
-stbui.match('/widget/lib/*.js', {
-    useHash: false,
-    isMod: false
-}).match('::package', {
+stbui
+    .match('/widget/lib/*.js', {
+        useHash: false,
+        isMod: false
+    })
+    .match('/widget/stbui.css', {
+        packTo: 'framework/framework.css'
+    })
+    .match('::package', {
     postpackager: stbui.plugin('loader', {
         resourceType: 'commonJs',
         useInlineMap: true
     })
 });
 
+
 stbui.media('dev')
-    .match('*.{js,css}', {
+    .match('*.{js,css,less,html}', {
         optimizer: null
+    }).match('/widget/**.css', {
+        deploy: [
+            fis.plugin('local-deliver', {
+                to: 'dist'
+            })
+        ]
     });
 
 stbui.media('prd')

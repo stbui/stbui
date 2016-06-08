@@ -1,11 +1,11 @@
 @import "../lib/variables.less";
 
-.tag, .badge {
+.@{stbui}tag, .@{stbui}badge {
   display: inline-block;
   min-width: 10px;
   font-size: 12px;
   font-weight: 700;
-  color: #fff;
+  color: @black;
   line-height: 1;
   vertical-align: middle;
   white-space: nowrap;
@@ -16,17 +16,18 @@
 
 .tag-variant(default; @brand-default);
 .tag-variant(primary; @brand-primary);
-.tag-variant(success; #008000);
-.tag-variant(warning; #FF9212);
+.tag-variant(success; @brand-success);
+.tag-variant(warning; @brand-warning);
 
 .tag-variant(@theme;@color;) {
 
-  .tag-@{theme} {
+  .@{stbui}tag-@{theme} {
     color: @color;
     border: 1px solid @color;
   }
 
-  .badge-@{theme} {
+  .@{stbui}badge-@{theme} {
+    color: @white;
     background-color: @color;
   }
 }
@@ -36,7 +37,7 @@
 .badge-size-variant(lg; 32px; 22px);
 
 .badge-size-variant(@theme;@size;@font-size) {
-  .badge-@{theme} {
+  .@{stbui}badge-@{theme} {
     border-radius: 50%;
     line-height: @size;
     width: @size;

@@ -1,7 +1,96 @@
-/*text */
-.text-12 {font-size: 12px}
-.text-14 {font-size: 14px;}
-.text-16 {font-size: 16px;}
+@import "variables.less";
+
+
+h1 {
+  font-size: 30px;
+  line-height: 36px;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+h3 {
+  line-height: 27px;
+  font-size: 18px;
+}
+
+h4 {
+  line-height: 18px;
+  font-size: 14px;
+}
+
+h5 {
+  line-height: 18px;
+  font-size: 12px;
+}
+
+h6 {
+  line-height: 18px;
+  font-size: 11px;
+}
+
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: @font-family-base;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #000;
+
+  small,
+  .small {
+    font-weight: normal;
+    line-height: 1;
+    color: #000;
+  }
+}
+
+h1, .h1 {
+  font-size: @font-size-h1;
+}
+
+h2, .h2 {
+  font-size: @font-size-h2;
+}
+
+h3, .h3 {
+  font-size: @font-size-h3;
+}
+
+h4, .h4 {
+  font-size: @font-size-h4;
+}
+
+h5, .h5 {
+  font-size: @font-size-h5;
+}
+
+h6, .h6 {
+  font-size: @font-size-h6;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
 .text-nowrap {
   white-space: nowrap;
 }
@@ -12,52 +101,30 @@
 
 .text-truncate {
   word-wrap: normal;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   overflow: hidden;
+  .text-ellipsis;
+  .text-nowrap;
 }
 
-.text-default {
-  color: #286eb4;
+.text-size-variant(@font-size-small);
+.text-size-variant(@font-size-large);
+.text-size-variant(@font-size-base);
+
+.text-size-variant(@font-size) {
+  .text-@{font-size} {
+    font-size: @font-size;
+  }
 }
 
-.text-primary {
-  color: #FF4400;
-}
+.text-color-variant(default; @brand-default);
+.text-color-variant(primary; @brand-primary);
+.text-color-variant(success; @brand-success);
+.text-color-variant(warning; @brand-warning);
+.text-color-variant(disabled; @brand-disabled);
+.text-color-variant(active; @brand-active);
 
-.text-success {
-  /*color: #ff4901;*/
-  color: #008000
-}
-
-.text-warning {
-  color: #FF9212;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.hide {
-  display: none;
-}
-
-.show {
-  display: block;
-}
-
-.pull-right {
-  float: right !important
-}
-
-.pull-left {
-  float: left !important
-}
-.disabled {
-  color: #999;
-  /*cursor: not-allowed;*/
-  text-decoration: none;
-}
-.active {
-
+.text-color-variant(@theme; @color) {
+  .text-@{theme} {
+    color: @color;
+  }
 }
