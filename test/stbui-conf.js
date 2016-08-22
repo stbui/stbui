@@ -1,125 +1,114 @@
-var appTitle = "stbui",
-    appName = "stbui";
+//fis.set('project.files', []);
+fis.set('project.ignore', ['README.md', 'fis-conf.js']);
 
-var deployDirectory = 'dist';
-fis.util.mkdir(deployDirectory);
+fis.set('statics', '/'); //staticç›®å½•
 
-/*
- * ÅäÖÃ½¨¹¹¹ı³ÌÅÅ³ıÎÄ¼ş
- */
-// Ô´Âë°üº¬ÉèÖÃ
-fis.config.set('project.files', [
-    'page/**',
-    '*.html'
-]);
-// Ô´ÂëÅÅ³ıÉèÖÃ
-fis.config.set('project.ignore', [
-    'widget/**',
-    deployDirectory + '/**'
-]);
+fis.hook('commonjs');
 
-/*
- * ÅäÖÃfis²å¼ş
- */
-// ÉèÖÃlessµÄ±àÒë
-// ×¢£º ÅäÖÃ¸Ã²å¼şºó£¬±¾µØµÄsublime¿ÉÒÔ²»ÓÃ°²×°lesstocss²å¼ş£¬½¨ÒéÖ±½Ó±à¼­lessÎÄ¼ş£¬Ê¹ÓÃlessµÄÀ©Õ¹¶¯Ì¬Óï·¨
-fis.match('**.less', {
-    parser: fis.plugin('less'),
-    rExt: '.css'
+
+/*************************ç›®å½•è§„èŒƒ*****************************/
+fis.match("**/*", {
+    release: '${statics}/$&'
 })
-    // ¾²Ì¬×ÊÔ´ÓÅ»¯²å¼ş
-    .match('*.js', {
-        // fis-optimizer-uglify-js ²å¼ş½øĞĞÑ¹Ëõ£¬ÒÑÄÚÖÃ
-        optimizer: fis.plugin('uglify-js')
-    }).match('*.less', {
-        // fis-optimizer-clean-css ²å¼ş½øĞĞÑ¹Ëõ£¬ÒÑÄÚÖÃ
-        optimizer: fis.plugin('clean-css')
-    }).match('*.png', {
-        // fis-optimizer-png-compressor ²å¼ş½øĞĞÑ¹Ëõ£¬ÒÑÄÚÖÃ
-        optimizer: fis.plugin('png-compressor')
+    .match(/^\/framework\/(.*)\.(js)$/i, {
+        isMod: true,
+        id: '$1', //idæ”¯æŒç®€å†™ï¼Œå»æ‰moduleså’Œ.jsåç¼€ä¸­é—´çš„éƒ¨åˆ†
+        release: '${statics}/$&'
     })
-    // .match('*.html', {
-    //     // Minify HTML
-    //     optimizer: fis.plugin('htmlmin')
-    // })
-    // ÅäÖÃÏà¶ÔÂ·¾¶µÄ²å¼ş£¬µ÷ÕûËùÓĞ¾²Ì¬×ÊÔ´ÒıÓÃÎªÏà¶ÔÂ·¾¶ÒıÓÃ
-    .hook('relative')
-    .match('**', {
-        relative: true
-    })
-    .match('!/*.html', {
-        useHash: true
-    })
-    //.match('::package', {
-    //    postpackager: stbui.plugin('loader', {
-    //        resourceType: 'commonJs',
-    //        useInlineMap: true
-    //    })
+    //pageä¸‹é¢çš„é¡µé¢å‘å¸ƒæ—¶å»æ‰pageæ–‡ä»¶å¤¹
+    //.match(/^\/page\/(.*)$/i, {
+    //.match(/^\/page\/(.*)\/(.*)\.(html)$/i, {
+    //    useCache: false,
+    //    release: '${statics}/$1'
     //})
-    .match('::package', {
-        postpackager: stbui.plugin('loader')
+    //ä¸€çº§åŒåç»„ä»¶ï¼Œå¯ä»¥å¼•ç”¨çŸ­è·¯å¾„ï¼Œæ¯”å¦‚modules/jquery/juqery.js
+    //ç›´æ¥å¼•ç”¨ä¸ºvar $ = require('jquery');
+    .match(/^\/framework\/([^\/]+)\/\1\.(js)$/i, {
+        id: '$1'
+    })
+    //lessçš„mixinæ–‡ä»¶æ— éœ€å‘å¸ƒ
+    .match(/^(.*)variables\.less$/i, {
+        release: false
+    })
+    //å‰ç«¯æ¨¡æ¿,å½“åšç±»jsæ–‡ä»¶å¤„ç†ï¼Œå¯ä»¥è¯†åˆ«__inline, __uriç­‰èµ„æºå®šä½æ ‡è¯†
+    .match("**/*.tmpl", {
+        isJsLike: true,
+        release: false
+    })
+    //é¡µé¢æ¨¡æ¿ä¸ç”¨ç¼–è¯‘ç¼“å­˜
+    .match(/.*\.(html|tpl|htm)$/, {
+        useCache: false
     })
 
-    // ÅäÖÃ²¿Êğ²å¼ş£ºÅäÖÃ±¾µØ²¿ÊğÄ¿Â¼
-    // ×¢£º±¾µØÁªµ÷ ºÍ ²âÊÔ»·¾³´ò°ü£¬¶¼Éú³ÉÔÚ{deployDirectory}Ä¿Â¼
-    .match("!(js/**)", {
-        deploy: fis.plugin('local-deliver', {
-            to: deployDirectory
-        })
-    })
-    .match('/*.html', {
-        deploy: [
-            fis.plugin('local-deliver', {
-                to: deployDirectory
-            })
-        ]
-    });
 
-
-/*
- * ¿ò¼ÜÄ¬ÈÏÍÆ¼öµÄjs´úÂëÎÄ¼şºÏ²¢²ßÂÔ£¬·ÖÒÔÏÂÈı²ã: 1.¿ò¼Ü²ã 2.×é¼ş²ã 3.Ó¦ÓÃ²ã/ÎÄµµ²ã
- */
-// ¿ò¼Ü²ã£ºframework.js¡¢ framework.css(Í¨¹ılessÅäÖÃ½âÎö¼´¿É)
-var frameworkJsPackages = [
-    "widget/tabs/index.js",
-    "widget/swiper/index.js"
-];
-frameworkJsPackages.forEach(function(package) {
-    fis.match(package, {
-        packTo: 'framework/framework.js'
-    });
-});
-
-// ×é¼ş²ã£ºcomponents.js¡¢components.css(Í¨¹ılessÅäÖÃ½âÎö¼´¿É)
-//var componentsJsPackages = [
-//    "widget/tabs/index.js",
-//    "widget/swiper/index.js"
-//];
-//componentsJsPackages.forEach(function(package) {
-//    fis.match(package, {
-//        packTo: 'framework/components.js'
-//    });
-//});
-
-var frameworkCssPackages = [
-    "widget/lib/stbui.less"
-];
-frameworkCssPackages.forEach(function(package) {
-    fis.match(package, {
-        packTo: 'framework/framework.css'
-    });
+/****************å¼‚æ„è¯­è¨€ç¼–è¯‘*****************/
+//lessçš„ç¼–è¯‘
+fis.match('**/*.less', {
+    rExt: '.css',
+    parser: fis.plugin('less'),
+    optimizer: fis.plugin('clean-css')
 });
 
 
-/*
- * ÅäÖÃÔÚ¸÷»·¾³ÏÂÏîÄ¿×ÊÔ´ÒıÓÃÓòÃû
- */
-var localhostMedia = fis.media('dev');
-localhostMedia
-    .match('*.js', {
+//æ‰“åŒ…ä¸css spriteåŸºç¡€é…ç½®
+fis.match('::packager', {
+    postpackager: fis.plugin('loader', {
+        resourceType: 'mod',
+        useInlineMap: true // èµ„æºæ˜ å°„è¡¨å†…åµŒ
+    }),
+    packager: fis.plugin('map'),
+    spriter: fis.plugin('csssprites', {
+        layout: 'matrix',
+        margin: '15'
+    })
+})
+
+
+/**********************ç”Ÿäº§ç¯å¢ƒä¸‹CSSã€JSå‹ç¼©åˆå¹¶*****************/
+fis.media('dev')
+    .match('**.js', {
+        optimizer: fis.plugin('uglify-js')
+    })
+    .match('/**(.async).js', {
+        preprocessor: null,
         optimizer: null
-    }).match('*.less', {
+    })
+    .match('**.css', {
+        optimizer: fis.plugin('clean-css')
+    })
+    .match("lib/mod.js", {
+        packTo: "/pkg/vendor.js"
+    })
+    .match("framework/common/stbui.less", {
+        packTo: "/pkg/vendor.css"
+    });
+
+fis.media('prod')
+    .match('**.js', {
+        optimizer: fis.plugin('uglify-js')
+    })
+    .match('/**(.async).js', {
+        preprocessor: null,
         optimizer: null
-    }).match('*.html', {
-        optimizer: null
+    })
+    .match('**.css', {
+        optimizer: fis.plugin('clean-css')
+    })
+    .match("lib/mod.js", {
+        packTo: "/pkg/vendor.js"
+    })
+    .match("lib/*.js", {
+        packTo: "/pkg/vendor.js"
+    })
+    .match("framework/**/*.js", {
+        packTo: "/pkg/framework.js"
+    })
+    .match("page/**/*.js", {
+        packTo: "/pkg/app.js"
+    })
+    // .match("page/**/*.less", {
+    //     packTo: "/pkg/app.css"
+    // })
+    .match("framework/common/stbui.less", {
+        packTo: "/pkg/vendor.css"
     });

@@ -24,14 +24,15 @@ cli.launch({
 }, function (env) {
 
     var stbui;
+
     if (!env.modulePath) {
-        stbui = require('./stbui-fis-conf');
+        stbui = require('../');
     } else {
-        //fis = require(env.modulePath);
-        stbui = require('./stbui-fis-conf');
+        stbui = require(env.modulePath);
+        // stbui = require('./stbui-fis-conf');
     }
-    stbui.set('system.localNPMFolder', path.join(env.cwd, 'node_modules/stbui'));
-    stbui.set('system.globalNPMFolder', path.dirname(__dirname));
+    stbui.set('system.localNPMFolder', path.join(env.cwd, 'node_modules'));
+    stbui.set('system.globalNPMFolder', path.dirname(__dirname),'node_modules');
 
     stbui.cli.run(argv, env);
 

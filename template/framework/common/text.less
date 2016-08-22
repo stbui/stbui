@@ -1,0 +1,97 @@
+@import "variables.less";
+
+.h-size-variant(h1, @font-size-h1, 36px);
+.h-size-variant(h2, @font-size-h2, 36px);
+.h-size-variant(h3, @font-size-h3, 27px);
+.h-size-variant(h4, @font-size-h4, 18px);
+.h-size-variant(h5, @font-size-h5, 18px);
+.h-size-variant(h6, @font-size-h6, 18px);
+
+.h-size-variant(@h;@font-size;@line-height) {
+  @{h} {
+    line-height: @line-height;
+    font-size: @font-size;
+  }
+}
+
+.title-size-variant(h1, @font-size-h1);
+.title-size-variant(h2, @font-size-h2);
+.title-size-variant(h3, @font-size-h3);
+.title-size-variant(h4, @font-size-h4);
+.title-size-variant(h5, @font-size-h5);
+.title-size-variant(h6, @font-size-h6);
+
+.title-size-variant(@h;@font-size) {
+  @{h}, .@{h} {
+    font-size: @font-size;
+    font-family: @font-family-base;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #000;
+
+    small,
+    .small {
+      font-weight: normal;
+      line-height: 1;
+      color: #000;
+    }
+  }
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.text-truncate {
+  word-wrap: normal;
+  overflow: hidden;
+  .text-ellipsis;
+  .text-nowrap;
+}
+
+.text-size-variant(@font-size-small);
+.text-size-variant(@font-size-large);
+.text-size-variant(@font-size-base);
+
+.text-size-variant(@font-size) {
+  .text-@{font-size} {
+    font-size: @font-size;
+  }
+}
+
+.text-color-variant(default; @brand-default);
+.text-color-variant(primary; @brand-primary);
+.text-color-variant(success; @brand-success);
+.text-color-variant(warning; @brand-warning);
+.text-color-variant(disabled; @brand-disabled);
+.text-color-variant(active; @brand-active);
+
+.text-color-variant(@theme; @color) {
+  .text-@{theme} {
+    color: @color;
+  }
+}

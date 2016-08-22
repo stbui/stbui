@@ -21,9 +21,9 @@ function printHelp() {
     console.log('    init           initialize a package');
     console.log('    release        release');
     console.log('    server         server');
-    console.log('    project        create new project');
-    console.log('    page           create page template');
-    console.log('    widget         create widget template');
+    console.log('    project        创建新新项目');
+    console.log('    page           新增业务模块');
+    console.log('    framework      新增公共通用模块');
     console.log();
 }
 
@@ -32,9 +32,10 @@ const subcmd = program.args[0];
 const args = process.argv.slice(3);
 const acronym = {
     "i": "init",
-    "p": "project",
+    "prj": "project",
     "w": "widget",
-    "a": "page"
+    "f": "framework",
+    "p": "page"
 };
 
 if (subcmd != 'release' && subcmd != 'server') {
@@ -49,6 +50,7 @@ if (subcmd != 'release' && subcmd != 'server') {
 }
 
 function executable(subcmd) {
+
     subcmd = acronym[subcmd] || subcmd;
     //var file = path.join(__dirname, 'stbui-' + subcmd + '.js');
     var file = COMMAND_PATH + '/stbui-' + subcmd + '.js';

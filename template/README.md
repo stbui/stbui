@@ -1,85 +1,44 @@
-Ç°¶Ë¼¯³É½â¾ö·½°¸
-======
+å‰ç«¯é›†æˆè§£å†³æ–¹æ¡ˆ
+=============
 
-* Ö§³Ö``webpack``¹¹½¨ÏîÄ¿
-* Ö§³Ö``fis``¹¹½¨ÏîÄ¿
-* ËùÓĞ¾²Ì¬×ÊÔ´×Ô¶¯¼Ó ``md5°æ±¾´Á``
-* Ö§³Ö¸øËùÓĞ¾²Ì¬×ÊÔ´Ìí¼ÓÓòÃûÇ°×º
-* ·Ç³£Ò×ÓÃµÄ×Ô¶¯ ``csssprites``
-* ×Ô¶¯jshintĞ£Ñéjs¡¢coffeeÎÄ¼ş£¬Ğ£Ñé½á¹ûÎª ``ÖĞÎÄ`` ÏÔÊ¾
-* js¡¢cssÑ¹Ëõ
-* pngÍ¼Æ¬Ñ¹Ëõ£¬Ö§³Ö ``½«png24Ñ¹ËõÎªpng8``
-* ÄÚÖÃ±¾µØ¿ª·¢µ÷ÊÔ·şÎñÆ÷
-* Ö§³ÖÊ¹ÓÃ ``less``¡¢``es6`` ¿ª·¢ÏîÄ¿
-* Ö§³ÖÎÄ¼ş¼àÌı£¬±£´æ¼´·¢²¼
-* Ö§³Öä¯ÀÀÆ÷×Ô¶¯Ë¢ĞÂ£¬±£´æ¼´Ë¢ĞÂ
-* ¿ÉÒÔÉÏ´«µ½Ô¶¶Ë·şÎñÆ÷£¬±£´æ¼´ÔöÁ¿±àÒëÉÏ´«
-* ³¬µÍÑ§Ï°³É±¾£¬Ö»Ğë¼ÇÒä ``3`` ÌõÃüÁî¼´¿ÉÍê³É¿ª·¢
-
-ÏêÏ¸ÓÃ·¨
-=========
-
-## °²×°
+## å®‰è£…
 
 ```bash
 npm install -g stbui
 ```
 
-°²×°³É¹¦ºóÖ´ĞĞ ``stbui -h`` ¼´¿É¿´µ½Ïà¹Ø¿ª·¢ÃüÁî°ïÖú
+å®‰è£…æˆåŠŸåæ‰§è¡Œ ``stbui -h`` å³å¯çœ‹åˆ°ç›¸å…³å¼€å‘å‘½ä»¤å¸®åŠ©
 
 
-## »ñµÃÒ»¸ötodoÑùÀıÏîÄ¿
-
-```bash
-stbui project demo
-```
-
-## ÈÃ´úÂëÅÜÆğÀ´£¡
-
-Ê×ÏÈ£¬Æô¶¯ÄÚÖÃµÄµ÷ÊÔ·şÎñÆ÷£º
-
-```bash
-stbui server start
-```
-
-```bash
-stbui release
-```
-
-
-## Ä¿Â¼¹æ·¶
-
-ÒµÎñÄ¿Â¼
-page
-    index
-    login
-    user
-
-×é¼şÄ¿Â¼
-widget
-    tab
-    list
-
-
-
-## ÅäÖÃÎÄ¼ş
-
-Ä¬ÈÏÅäÖÃÎÄ¼şÎª stbui-conf.js£¬stbui ±àÒëµÄÕû¸öÁ÷³Ì¶¼ÊÇÍ¨¹ıÅäÖÃÀ´¿ØÖÆµÄ¡£
-
-
-## stbui ÃüÁî
-
-```bash
-stbui release
-stbui server
-```
-
-## stbui ÃüÁî¼ò»¯
+## éƒ¨ç½²
 ```bash
 npm run start
-npm run dev
-npm run prd
 ```
 
+```bash
+npm run build
+```
 
-Èç¹ûÊ¹ÓÃÖĞÓöµ½Ê²Ã´¾õµÃ¹îÒìµÄµØ·½£¬»¶Ó­²¦´òÈÈÏßµç»°10086
+ç¬¬ä¸‰æ–¹ç»„ä»¶
+moment
+- http://momentjs.com/
+- https://github.com/ded/bowser
+- https://github.com/paulmillr/console-polyfill/
+- https://github.com/medialize/URI.js
+- https://github.com/ScottHamper/Cookies
+
+- https://github.com/keithclark/selectivizr
+- https://github.com/zhangxinxu/ieBetter.js
+- http://css3pie.com/
+- http://etiennetalbot.github.io/formFive/
+- https://github.com/jonathantneal/flexibility
+- http://holderjs.com/
+
+- http://js-grid.com/
+
+
+- http://uxco.re/
+- http://mofang.xiaojukeji.com/
+- http://sui.taobao.org/sui/docs/index.html
+- https://github.com/JSLite/JSLite
+- http://ant.design/

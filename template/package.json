@@ -3,24 +3,16 @@
   "version": "1.0.0",
   "description": "stbui",
   "scripts": {
-    "start": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build",
-    "build": "webpack --progress --colors --watch",
-    "watch": "webpack-dev-server --hot --progress --colors",
-    "dist": "NODE_ENV=production webpack --progress --colors"
+    "start": "stbui server start",
+    "build": "stbui release prod",
+    "dev": "stbui release dev -wL --verbose",
+    "prod": "stbui release prod",
+    "dist": "stbui release prod",
+    "watch": "stbui release dev -wL"
   },
   "author": "stbui.com",
   "license": "ISC",
   "devDependencies": {
-    "css-loader": "^0.23.1",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.8.5",
-    "html-loader": "^0.4.3",
-    "html-webpack-plugin": "^2.16.1",
-    "less": "^2.7.1",
-    "less-loader": "^2.2.3",
-    "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "fis3-hook-commonjs": "^0.1.25"
   }
 }

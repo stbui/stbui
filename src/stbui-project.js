@@ -4,8 +4,9 @@ import path from 'path';
 import program from 'commander';
 import vfs from 'vinyl-fs';
 
+// stbui璺緞
 const ROOT_PATH = path.dirname(__dirname) + path.sep;
-// 模板目录
+// 妯℃澘鐩綍
 const APP_PATH = ROOT_PATH + '/template';
 
 
@@ -17,17 +18,22 @@ function printHelp() {
 
 function createProject(project) {
 
-    // 拷贝 page 目录文件
+    // 鎷疯礉 page 鐩綍鏂囦欢
     var page = path.join(APP_PATH + '/page', '**');
     vfs.src(page)
         .pipe(vfs.dest(project + '/page'));
 
-    // 拷贝 widget 目录文件
-    var widget = path.join(APP_PATH + '/widget', '**');
+    // 鎷疯礉 framework 鐩綍鏂囦欢
+    var widget = path.join(APP_PATH + '/framework', '**');
     vfs.src(widget)
-        .pipe(vfs.dest(project + '/widget'));
+        .pipe(vfs.dest(project + '/framework'));
 
-    // 拷贝配置文件
+    // 鎷疯礉 lib 鐩綍鏂囦欢
+    var widget = path.join(APP_PATH + '/lib', '**');
+    vfs.src(widget)
+        .pipe(vfs.dest(project + '/lib'));
+
+    // 鎷疯礉閰嶇疆鏂囦欢
     var config = [
         //APP_PATH + '/stbui-conf.js',
         APP_PATH + '/README.md',
@@ -36,7 +42,11 @@ function createProject(project) {
     vfs.src(config)
         .pipe(vfs.dest(project));
 
-    console.log('create project success');
+    console.log();
+    console.log('$ create project success');
+    console.log();
+    console.log('$ cd ' + project + ' && npm install');
+    console.log();
 }
 
 

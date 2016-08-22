@@ -1,0 +1,189 @@
+<!doctype html>
+<!--[if lt IE 7 ]>
+<html dir="ltr" lang="zh" class="ie6 ie"> <![endif]-->
+<!--[if IE 7 ]>
+<html dir="ltr" lang="zh" class="ie7 ie"> <![endif]-->
+<!--[if IE 8 ]>
+<html dir="ltr" lang="zh" class="ie8 ie"> <![endif]-->
+<!--[if IE 9 ]>
+<html dir="ltr" lang="zh" class="ie9 ie"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html dir="ltr" lang="zh" class=""> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>构建工具 - Powery by stbui</title>
+    <link rel="stylesheet" href="../../framework/common/stbui.less"/>
+    <link rel="stylesheet" href="../../framework/nav/index.css"/>
+    <link rel="stylesheet" href="./index.less"/>
+
+    <style>
+
+        .top-nav-wrap {
+            box-sizing: content-box;
+            _background-image: url(about:blank);
+            _background-attachment: fixed;
+            _top: expression(eval(document.documentElement.scrollTop));
+        }
+        .top-nav-wrap a{
+            box-sizing: content-box;
+        }
+    </style>
+</head>
+<body>
+<div class="top-nav-wrap">
+    <div class="main" id="fixMenuBar">
+        <div class="tw-nav">
+            <a href="http://www.eastmoney.com/sitemap.html" class="sitemap">网站导航</a>
+            <div class="down-menu wz5">
+                <a href="http://js5.eastmoney.com/tg.aspx?ID=431" class="category red">移动客户端</a>
+                <ul>
+                    <li><a href="http://acttg.eastmoney.com/pub/web_app_dcsy_top1_01_01_01_1">东方财富网iPhone版</a></li>
+                    <li><a href="http://acttg.eastmoney.com/pub/web_app_dcsy_top1_01_02_01_1">东方财富网Android版</a></li>
+                    <li><a href="http://acttg.eastmoney.com/pub/web_app_dcsy_top1_01_03_01_1">东方财富网WinPhone版</a></li>
+                    <li><a href="http://acttg.eastmoney.com/pub/web_app_dcsy_top1_02_02_01_1">东方财富网Pad版</a></li>
+                    <li><a href="http://js1.eastmoney.com/tg.aspx?ID=3120">天天基金iPhone版</a></li>
+                    <li><a href="http://js1.eastmoney.com/tg.aspx?ID=3121">天天基金安卓版</a></li>
+                    <li><a href="http://js5.eastmoney.com/tg.aspx?ID=1777">股吧iPhone版</a></li>
+                    <li><a href="http://js5.eastmoney.com/tg.aspx?ID=1778">股吧安卓版</a></li>
+                </ul>
+            </div>
+            <div class="down-menu wz4">
+                <a href="http://cp.eastmoney.com/cp20160704_target/index.html" class="category">东方财富</a>
+                <ul>
+                    <li class="tit blue"><span>免费版</span></li>
+                    <li><a href="http://acttg.eastmoney.com/pub/web_pc_dcsy_top1_02_01_01_1">电脑版</a></li>
+                    <li><a href="http://acttg.eastmoney.com/pub/web_app_dcsy_top1_02_02_01_1">ipad版</a></li>
+
+                    <li class="tit red"><span>收费增值版</span></li>
+                    <li><a href="http://acttg.eastmoney.com/pub/web_pc_dcsy_top1_02_02_01_1 ">Level-2极速版</a></li>
+                    <li><a href="http://stattg.eastmoney.com/11448">港股Level-2</a></li>
+                    <li><a href="http://stattg.eastmoney.com/10960">专业版</a></li>
+                    <li><a href="http://js5.eastmoney.com/tg.aspx?ID=349">Level-2决策版</a></li>
+                    <li><span class="red"><a href="http://js5.eastmoney.com/tg.aspx?ID=1483">投资大师</a></span></li>
+
+                </ul>
+            </div>
+            <div class="down-menu">
+                <a href="http://fund.eastmoney.com/" class="category">天天基金网</a>
+                <ul>
+                    <li><a href="https://trade.1234567.com.cn/login">基金交易</a></li>
+                    <li><a href="http://huoqibao.1234567.com.cn/">活期宝</a></li>
+                    <li><a href="http://fund.eastmoney.com/favor.html">自选基金</a></li>
+                    <li><a href="http://fund.eastmoney.com/fund.html">基金净值</a></li>
+                    <li><a href="http://fund.eastmoney.com/fundguzhi.html">基金估值</a></li>
+                    <li><a href="http://fund.eastmoney.com/data/fundranking.html">基金排行</a></li>
+                    <li><a href="http://fund.eastmoney.com/data/fundrating.html">基金评级</a></li>
+                    <li><a href="http://fund.eastmoney.com/dingtou/">基金定投</a></li>
+                    <li><a href="http://fund.eastmoney.com/tradeindex.html">基金超市</a></li>
+                    <li><a href="http://fund.eastmoney.com/daogou/">基金导购</a></li>
+                </ul>
+            </div>
+            <div class="down-menu wz6">
+                <a href="http://acttg.eastmoney.com/pub/web_kh_dcsy_jycdl_01_01_01_1" class="category">东方财富证券</a>
+                <ul>
+                    <li><a href="https://jy.xzsec.com/Trade/Buy">证券交易</a></li>
+                    <li><a href="http://acttg.eastmoney.com/pub/web_kh_dcsy_jyagkh_01_01_01_0">万2.5佣金开户</a></li>
+                    <li><a href="http://acttg.eastmoney.com/pub/web_kh_dcsy_jydnkh_01_01_01_0">电脑开户</a></li>
+                    <li><a href="http://acttg.eastmoney.com/pub/web_kh_dcsy_jysjkh_01_01_01_0">手机开户</a></li>
+                    <li><a href="https://kh.eastmoney.com/Account/Step1">开户进度查询</a></li>
+                    <li><a href="https://kh.eastmoney.com/Account/Step1">查询开户结果</a></li>
+                    <li><a href="https://kh.eastmoney.com/Account/Step1">查询资金账号</a></li>
+                </ul>
+            </div>
+            <div class="down-menu wz5">
+                <a href="http://js5.eastmoney.com/tg.aspx?ID=789" class="category">Choice数据</a>
+                <ul>
+                    <li><a href="http://js5.eastmoney.com/tg.aspx?ID=1928">Choice金融终端</a></li>
+                    <li><a href="http://js5.eastmoney.com/tg.aspx?ID=1929">Choice数据服务</a></li>
+                </ul>
+            </div>
+            <div class="down-menu wz2">
+                <a href="http://guba.eastmoney.com/" class="category">股吧</a>
+                <ul>
+                    <li><a href="http://js5.eastmoney.com/tg.aspx?ID=1707">手机版下载</a></li>
+                    <li><a href="http://iguba.eastmoney.com/">我的股吧</a></li>
+                    <li><a href="http://guba.eastmoney.com/remenba.aspx?type=2">热门主题</a></li>
+                    <li><a href="http://guba.eastmoney.com/remenba.aspx?type=1">热门个股</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="tw-login">
+            <div class="down-menu wz0" id="loginMenu">
+                <div class="userinfo"><cite>欢迎您，</cite><span id="unamepop" class="user-menu"><a
+                        href="http://i.eastmoney.com/">qf4f13</a></span><a href="javascript:;" target="_self"
+                                                                           hidefocus="true" id="hlogoutlink">退出</a>
+                </div>
+            </div>
+            <div class="down-menu wz4">
+                <a href="http://i.eastmoney.com" class="category">我的菜单</a>
+                <ul>
+                    <li><a href="http://i.eastmoney.com/">我的自选股</a></li>
+                    <li><a href="http://fund.eastmoney.com/favor/">我的基金</a></li>
+                    <li><a href="http://iguba.eastmoney.com/">我的股吧</a></li>
+                    <li><a href="http://blog.eastmoney.com/">我的博客</a></li>
+                    <li><a href="http://group.eastmoney.com/mygroup.html">我的投资组合</a></li>
+                </ul>
+            </div>
+            <div class="down-menu wz4">
+                <a href="https://jy.xzsec.com/Trade/Buy" class="category">证券交易</a>
+                <ul>
+                    <li><a href="https://jy.xzsec.com/Trade/Buy">在线交易</a></li>
+                    <li><a href="http://acttg.eastmoney.com/pub/web_kh_dcsy_jyagkh_01_01_01_0">万2.5佣金开户</a></li>
+                    <li><a href="http://acttg.eastmoney.com/pub/web_kh_dcsy_jydnkh_01_01_01_0">电脑开户</a></li>
+                    <li><a href="http://acttg.eastmoney.com/pub/web_kh_dcsy_jysjkh_01_01_01_0">手机开户</a></li>
+                    <li><a href="https://jy.xzsec.com/Search/Position">资金持仓</a></li>
+                    <li><a href="https://jy.xzsec.com/Search/Orders">交易查询</a></li>
+                    <li><a href="https://jy.xzsec.com/MarginSearch/MyAssets">融资融券</a></li>
+                    <li><a href="https://jy.xzsec.com/Trade/NewBuy">新股申购</a></li>
+                    <li><a href="https://jy.xzsec.com/SchroederFund/Index">天天宝</a></li>
+                    <li><a href="https://jy.xzsec.com/HKTrade/HKBuy">港股通</a></li>
+                </ul>
+            </div>
+            <div class="down-menu wz4">
+                <a href="https://trade.1234567.com.cn/Login" class="category">基金交易</a>
+                <ul>
+                    <li><a href="https://trade.1234567.com.cn/MyAssets/Default">我的资产</a></li>
+                    <li><a href="https://trade.1234567.com.cn/xjb/index">活期宝</a></li>
+                    <li><a href="https://trade.1234567.com.cn/dqb/default">定期宝</a></li>
+                    <li><a href="https://trade.1234567.com.cn/zsb/default">指数宝</a></li>
+                    <li><a href="https://trade.1234567.com.cn/FundtradePage/default2">买基金</a></li>
+                    <li><a href="https://trade.1234567.com.cn/login?direct_url=/FundtradePage/redemption">卖基金</a></li>
+                    <li><a href="https://trade.1234567.com.cn/Investment/default">基金定投</a></li>
+                    <li><a href="https://trade.1234567.com.cn/reg/">免费开户</a></li>
+                    <li><a href="http://fundact.eastmoney.com/app/">手机客户端</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper">
+    <div class="row">
+        <div class="col2">
+            <div class="aside">
+                <ul>
+                    <li><a href="../table/index.html">table</a></li>
+                    <li><a href="../pagination/index.html">pagination</a></li>
+                    <li><a href="../list/index.html">list</a></li>
+                    <li><a href="../article/index.html">article</a></li>
+                    <li><a href="../badge/index.html">badge</a></li>
+                    <li><a href="../panel/index.html">panel</a></li>
+                    <li><a href="../footer/index.html">footer</a></li>
+                    <li><a href="../tabs/index.html">tabs</a></li>
+                    <li><a href="../topbar/index.html">topbar</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col10">
+            <div class="content"></div>
+        </div>
+    </div>
+</div>
+
+<script src="//cdn.bootcss.com/jquery/1.7/jquery.min.js"></script>
+
+<script src="index.js"></script>
+</body>
+</html>
