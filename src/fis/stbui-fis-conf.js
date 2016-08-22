@@ -1,8 +1,7 @@
 import fis3 from 'fis3';
-import  fs from 'fs';
+
 
 const stbui = module.exports = fis3;
-
 stbui.require.prefixes.unshift('stbui');
 stbui.cli.name = 'stbui';
 stbui.cli.info = '';
@@ -13,20 +12,15 @@ Object.defineProperty(global, 'stbui', {
     value: stbui
 });
 
-// 当前命令行所在的路径
-const APP_PATH = process.cwd() + path.sep;
 
-// 读取package信息
-var config = fs.readFileSync(APP_PATH+'package.json','utf-8');
-
-var appName = config.name;
-var version = config.version;
+var appName = '';
+var version = '';
 var relative = false;
 var htmlmin = true;
 
 
 //stbui.set('project.files', []);
-stbui.set('project.ignore', ['dist/**', 'node_modules/**', 'doc/**', 'package.json', 'README.md', 'fis-conf.js']);
+stbui.set('project.ignore', ['dist/**', 'node_modules/**', 'doc/**', 'package.json', 'README.md', 'fis-conf.js', 'stbui-conf.js']);
 
 stbui.set('statics', '/' + appName); //static目录
 
@@ -89,7 +83,7 @@ stbui.match('**/*.less', {
 
 //打包与css sprite基础配置
 stbui.match('::package', {
-    postpackager: fis.plugin('loader', {
+    postpackager: stbui.plugin('loader', {
         resourceType: 'mod',
         useInlineMap: true // 资源映射表内嵌
     }),
@@ -111,7 +105,7 @@ stbui.media('dev')
         optimizer: null
     })
     .match('**.css', {
-        optimizer: fis.plugin('clean-css')
+        optimizer: stbui.plugin('clean-css')
     })
     .match("lib/mod.js", {
         packTo: "/pkg/vendor.js"
@@ -122,14 +116,14 @@ stbui.media('dev')
 
 stbui.media('prod')
     .match('**.js', {
-        optimizer: fis.plugin('uglify-js')
+        optimizer: stbui.plugin('uglify-js')
     })
     .match('/**(.async).js', {
         preprocessor: null,
         optimizer: null
     })
     .match('**.css', {
-        optimizer: fis.plugin('clean-css')
+        optimizer: stbui.plugin('clean-css')
     })
     .match("lib/mod.js", {
         packTo: "/pkg/vendor.js"
@@ -161,25 +155,25 @@ stbui.media('prod')
         useHash: true
     })
     .match('*.html', {
-        optimizer: fis.plugin('html-minifier', {
+        optimizer: stbui.plugin('html-minifier', {
             useShortDoctype: true,
             collapseWhitespace: htmlmin
         })
     })
     .match('index.html:js', {
-        optimizer: fis.plugin('uglify-js')
+        optimizer: stbui.plugin('uglify-js')
     })
-    .match('**', {
-        deploy: [
-            stbui.plugin('zip', {
-                filename: appName + version + '.zip'
-            }),
-
-            stbui.plugin('local-deliver', {
-                to: './dist'
-            })
-        ]
-    })
+// .match('**', {
+//     deploy: [
+//         stbui.plugin('zip', {
+//             filename: appName + version + '.zip'
+//         }),
+//
+//         stbui.plugin('local-deliver', {
+//             to: './dist'
+//         })
+//     ]
+// })
 // .match("lib/*.js", {
 //     packTo: "/pkg/vendor.js"
 // })
