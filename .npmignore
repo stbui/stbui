@@ -17,10 +17,7 @@ Thumbs.db
 *.log
 *.sublime-project
 *.sublime-workspace
-node_modules/
-src/
-dist/
-tmp/
+.npmignore
 .lego-build
 .buildpath
 .settings
@@ -32,5 +29,9 @@ tmp/
 _site/
 tests/
 docs/
+node_modules/
+tmp/
 _theme/
 coverage
+src/
+dist/

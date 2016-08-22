@@ -1,6 +1,6 @@
 {
   "name": "stbui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "stbui",
   "main": "index.js",
   "bin": {
@@ -11,12 +11,12 @@
     "prd": "stbui release bulid -d ./dist",
     "min": "stbui release bulid -d ./dist",
     "dev": "stbui release dev -d ./dist --verbose -w -L",
-    "compile": "babel src/ --out-dir lib/"
+    "compile": "babel src/ --out-dir lib/",
+    "publish":"git add . && git commit -m '0.1.0' && git push origin stbui"
   },
   "author": "stbui.com",
   "license": "ISC",
-  "devDependencies": {
-    "babel": "^4.7.16",
+  "dependencies":{
     "chalk": "^1.1.1",
     "commander": "^2.9.0",
     "fis-parser-es6-babel": "^1.0.0",
@@ -30,6 +30,9 @@
     "fis3-preprocessor-js-require-css": "*",
     "vinyl-fs": "^2.4.3",
     "win-spawn": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel": "^4.7.16"
   },
   "babel": {
     "presets": [

@@ -17,10 +17,10 @@ Object.defineProperty(global, 'stbui', {
 const APP_PATH = process.cwd() + path.sep;
 
 // 读取package信息
-var package = fs.readFileSync(APP_PATH+'package.json','utf-8');
+var config = fs.readFileSync(APP_PATH+'package.json','utf-8');
 
-var appName = package.name;
-var version = package.version;
+var appName = config.name;
+var version = config.version;
 var relative = false;
 var htmlmin = true;
 
