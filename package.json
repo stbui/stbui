@@ -1,6 +1,6 @@
 {
   "name": "stbui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "stbui",
   "main": "index.js",
   "bin": {

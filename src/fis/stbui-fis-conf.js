@@ -15,8 +15,8 @@ Object.defineProperty(global, 'stbui', {
 
 var appName = '';
 var version = '';
-var relative = false;
-var htmlmin = true;
+var relative = true;
+var htmlmin = false;
 
 
 //stbui.set('project.files', []);
@@ -154,12 +154,12 @@ stbui.media('prod')
     .match("/pkg/framework.css", {
         useHash: true
     })
-    .match('*.html', {
-        optimizer: stbui.plugin('html-minifier', {
-            useShortDoctype: true,
-            collapseWhitespace: htmlmin
-        })
-    })
+    // .match('*.html', {
+    //     optimizer: stbui.plugin('html-minifier', {
+    //         useShortDoctype: true,
+    //         collapseWhitespace: htmlmin
+    //     })
+    // })
     .match('index.html:js', {
         optimizer: stbui.plugin('uglify-js')
     })

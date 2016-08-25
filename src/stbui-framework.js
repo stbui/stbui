@@ -3,7 +3,6 @@
 import fs from 'fs';
 import path from 'path';
 import program from 'commander';
-import vfs from 'vinyl-fs';
 
 // stbui路径
 const ROOT_PATH = path.dirname(__dirname) + path.sep;

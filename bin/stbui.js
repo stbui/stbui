@@ -10,7 +10,7 @@ const COMMAND_PATH = ROOT_PATH + 'lib';
 
 
 program
-    .version('0.0.1', '-v, --version')
+    .version('1.0.1', '-v, --version')
     .usage('<command> [options]')
     .on('--help', printHelp)
     .on('-h', printHelp)
@@ -18,12 +18,12 @@ program
 
 function printHelp() {
     console.log();
-    console.log('    init           initialize a package');
-    console.log('    release        release');
-    console.log('    server         server');
-    console.log('    project        创建新新项目');
+    console.log('    init           初始化项目');
+    console.log('    release        构建项目');
+    console.log('    server         服务管理');
+    console.log('    project        创建项目');
     console.log('    page           新增业务模块');
-    console.log('    framework      新增公共通用模块');
+    console.log('    framework      新增通用模块');
     console.log();
 }
 

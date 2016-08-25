@@ -3,7 +3,6 @@
 import fs from 'fs';
 import path from 'path';
 import program from 'commander';
-import vfs from 'vinyl-fs';
 
 // stbui路径
 const ROOT_PATH = path.dirname(__dirname) + path.sep;
@@ -23,15 +22,6 @@ function printHelp() {
     console.log();
 }
 
-//function createWidget(widget) {
-//    var source = path.join(ROOT_PATH + 'template/page/index', '**');
-//    var target = path.join(APP_PATH + '/widget/' + widget);
-//
-//    vfs.src(source)
-//        .pipe(vfs.dest(target));
-//
-//    console.log('create widget success', ROOT_PATH, APP_PATH, template);
-//}
 
 function createWidget(widgetName) {
     const widgetPath = APP_PATH + path.sep + 'widget' + path.sep + widgetName;
@@ -69,7 +59,7 @@ function htmlTemplate() {
 
 
 program
-    .version('0.0.1', '-v, --version')
+    .version('1.0.1', '-v, --version')
     .usage('<command> [options]')
     .on('--help', printHelp)
     .on('-h', printHelp)
@@ -78,7 +68,6 @@ program
 const subcmd = program.args[0];
 
 if (subcmd) {
-    //createWidget(subcmd);
     createWidget(subcmd);
 } else {
     program.help();

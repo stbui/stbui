@@ -51,7 +51,7 @@ function createProject(project) {
 
 
 program
-    .version('0.0.1', '-v, --version')
+    .version('1.0.1', '-v, --version')
     .usage('<command> [options]')
     .on('--help', printHelp)
     .on('-h', printHelp)
