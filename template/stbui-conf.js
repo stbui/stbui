@@ -1,7 +1,9 @@
-stbui.set('project.ignore', ['README.md', 'stbui-conf.js']);
+var appName = '';
+var version = +new Date();
+var relative = true;
 
-stbui.set('statics', '/'); //static目录
-
+stbui.set('project.ignore', ['dist/**', 'node_modules/**', 'doc/**', 'package.json', 'README.md', 'fis-conf.js', 'stbui-conf.js']);
+stbui.set('statics', '/' + appName); //static目录
 stbui.hook('commonjs');
 
 
@@ -9,19 +11,24 @@ stbui.hook('commonjs');
 stbui.match("**/*", {
     release: '${statics}/$&'
 })
+    .hook('relative')
+    .match('**', {
+        relative: relative
+    })
     .match(/^\/framework\/(.*)\.(js)$/i, {
         isMod: true,
-        id: '$1', //id支持简写，去掉modules和.js后缀中间的部分
+        id: '$1', //id支持简写，去掉framework和.js后缀中间的部分
         release: '${statics}/$&'
     })
     //page下面的页面发布时去掉page文件夹
     .match(/^\/page\/(.*)$/i, {
         isMod: true,
+        id: '$1',
     })
-    // .match(/^\/page\/(.*)\/(.*)\.(html)$/i, {
-    //     useCache: false,
-    //     release: '${statics}/$1'
-    // })
+    .match(/^\/page\/(.*)\/(.*)\.(html)$/i, {
+        useCache: false,
+        release: '${statics}/$1'
+    })
     //一级同名组件，可以引用短路径，比如modules/jquery/juqery.js
     //直接引用为var $ = require('jquery');
     .match(/^\/framework\/([^\/]+)\/\1\.(js)$/i, {
@@ -68,7 +75,7 @@ stbui.match('::package', {
 /**********************生产环境下CSS、JS压缩合并*****************/
 stbui.media('dev')
     .match('**.js', {
-        optimizer: stbui.plugin('uglify-js')
+        optimizer: null
     })
     .match('/**(.async).js', {
         preprocessor: null,
@@ -78,38 +85,65 @@ stbui.media('dev')
         optimizer: stbui.plugin('clean-css')
     })
     .match("lib/mod.js", {
-        packTo: "/pkg/vendor.js"
+        packTo: "/pkg/framework.js"
     })
     .match("framework/common/stbui.less", {
-        packTo: "/pkg/vendor.css"
+        packTo: "/pkg/framework.css"
     });
 
 stbui.media('prod')
     .match('**.js', {
-        optimizer: stbui.plugin('uglify-js')
+        optimizer: fis.plugin('uglify-js')
     })
     .match('/**(.async).js', {
         preprocessor: null,
         optimizer: null
     })
     .match('**.css', {
-        optimizer: stbui.plugin('clean-css')
+        optimizer: fis.plugin('clean-css')
     })
     .match("lib/mod.js", {
-        packTo: "/pkg/vendor.js"
+        packTo: "/pkg/framework.js",
+        packOrder: -1
     })
-    .match("lib/*.js", {
-        packTo: "/pkg/vendor.js"
-    })
-    .match("framework/**/*.js", {
-        packTo: "/pkg/framework.js"
-    })
-    .match("page/**/*.js", {
-        packTo: "/pkg/app.js"
-    })
-    // .match("page/**/*.less", {
-    //     packTo: "/pkg/app.css"
+    // 该项目没有调用framework.js
+    // .match("framework/**/*.js", {
+    //     packTo: "/pkg/framework.js",
     // })
     .match("framework/common/stbui.less", {
-        packTo: "/pkg/vendor.css"
-    });
+        packTo: "/pkg/framework.css"
+    })
+    .match("page/**/*.js", {
+        packTo: "/pkg/app.js",
+    })
+    .match("page/index/index.less", {
+        packTo: "/pkg/app.css"
+    })
+    // 打包后的文件添加md5
+    .match("/pkg/*.{js,css}", {
+        useHash: true
+    })
+    .match("page/**.{png,jpg,gif}", {
+        release: '/pkg/$0'
+    })
+    // 压缩内联js
+    .match('index.html:js', {
+        optimizer: fis.plugin('uglify-js')
+    })
+    .match('framework/**', {
+        release:'/pkg/$0'
+    })
+    .match('**', {
+        deploy: [
+            // 删除打包后的源文件
+            stbui.plugin('skip-packed'),
+            stbui.plugin('zip', {
+                filename: appName + version + '.zip'
+            }),
+
+            stbui.plugin('local-deliver', {
+                to: './dist'
+            })
+        ]
+    })
+;

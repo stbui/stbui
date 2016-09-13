@@ -14,16 +14,11 @@ Object.defineProperty(global, 'stbui', {
 
 
 var appName = '';
-var version = '';
+var version = +new Date();
 var relative = true;
-var htmlmin = false;
 
-
-//stbui.set('project.files', []);
 stbui.set('project.ignore', ['dist/**', 'node_modules/**', 'doc/**', 'package.json', 'README.md', 'fis-conf.js', 'stbui-conf.js']);
-
 stbui.set('statics', '/' + appName); //static目录
-
 stbui.hook('commonjs');
 
 
@@ -44,9 +39,6 @@ stbui.match("**/*", {
     .match(/^\/page\/(.*)$/i, {
         isMod: true,
         id: '$1',
-    })
-    .match('{page/login/newsgubareply.js,page/login/json3.js}', {
-        isMod: false
     })
     .match(/^\/page\/(.*)\/(.*)\.(html)$/i, {
         useCache: false,
@@ -108,73 +100,65 @@ stbui.media('dev')
         optimizer: stbui.plugin('clean-css')
     })
     .match("lib/mod.js", {
-        packTo: "/pkg/vendor.js"
+        packTo: "/pkg/framework.js"
     })
     .match("framework/common/stbui.less", {
-        packTo: "/pkg/vendor.css"
+        packTo: "/pkg/framework.css"
     });
 
 stbui.media('prod')
     .match('**.js', {
-        optimizer: stbui.plugin('uglify-js')
+        optimizer: fis.plugin('uglify-js')
     })
     .match('/**(.async).js', {
         preprocessor: null,
         optimizer: null
     })
     .match('**.css', {
-        optimizer: stbui.plugin('clean-css')
+        optimizer: fis.plugin('clean-css')
     })
     .match("lib/mod.js", {
-        packTo: "/pkg/vendor.js"
+        packTo: "/pkg/framework.js",
+        packOrder: -1
     })
     .match("framework/**/*.js", {
         packTo: "/pkg/framework.js",
-        useHash: true
-    })
-    .match("page/**/*.js", {
-        packTo: "/pkg/app.js",
-        useHash: true
-    })
-    .match("/pkg/app.js", {
-        useHash: true
-    })
-    .match("/pkg/framework.js", {
-        useHash: true
-    })
-    .match("page/**/*.less", {
-        packTo: "/pkg/app.css"
-    })
-    .match("/pkg/app.css", {
-        useHash: true
     })
     .match("framework/common/stbui.less", {
         packTo: "/pkg/framework.css"
     })
-    .match("/pkg/framework.css", {
+    .match("page/**/*.js", {
+        packTo: "/pkg/app.js",
+    })
+    .match("page/**/*.less", {
+        packTo: "/pkg/app.css"
+    })
+    // 打包后的文件添加md5
+    .match("/pkg/*.{js,css}", {
         useHash: true
     })
-    // .match('*.html', {
-    //     optimizer: stbui.plugin('html-minifier', {
-    //         useShortDoctype: true,
-    //         collapseWhitespace: htmlmin
-    //     })
-    // })
-    .match('index.html:js', {
-        optimizer: stbui.plugin('uglify-js')
+    .match("page/**.{png,jpg,gif}", {
+        release: '/pkg/$0'
     })
-// .match('**', {
-//     deploy: [
-//         stbui.plugin('zip', {
-//             filename: appName + version + '.zip'
-//         }),
-//
-//         stbui.plugin('local-deliver', {
-//             to: './dist'
-//         })
-//     ]
-// })
-// .match("lib/*.js", {
-//     packTo: "/pkg/vendor.js"
-// })
+    // 压缩内联js
+    .match('index.html:js', {
+        optimizer: fis.plugin('uglify-js')
+    })
+    //  视情况
+    // .match('framework/**', {
+    //     release:'/pkg/$0'
+    // })
+    .match('**', {
+        deploy: [
+            // 删除打包后的源文件
+            stbui.plugin('skip-packed'),
+            stbui.plugin('zip', {
+                filename: appName + version + '.zip'
+            }),
+
+            stbui.plugin('local-deliver', {
+                to: './dist'
+            })
+        ]
+    })
 ;
