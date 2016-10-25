@@ -1,3 +1,11 @@
+/**
+ * @name 本地存储组件
+ * @author: bright
+ * @mail: 772020653@qq.com
+ * @website: http://stbui.com
+ * @update: 2016.10.08
+ */
+
 var cookies = {
     set: function (name, value, expires, path, domain) {
         expires = new Date(new Date().getTime() + (((typeof expires == "undefined") ? 12 * 7200 : expires)) * 1000);

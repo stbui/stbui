@@ -1,0 +1,72 @@
+@import "../common/variables.less";
+
+@backtop-width: 50px;
+@backtop-height: 51px;
+
+.@{stbui}backtop {
+  position: fixed;
+  left: 50%;
+  bottom: 250px;
+  width: @backtop-width;
+  margin-left: @screen-base/2+5;
+  z-index: @z-index-base;
+  _position: absolute;
+
+  &-search {
+    position: absolute;
+    top: 0;
+    left: -237px;
+    background-color: #3A5E95;
+    .size(238px, 36px);
+    padding-top: 15px;
+    text-align: center;
+    display: none;
+  }
+
+  &-input {
+    border: 0;
+    .size(123px, 16px);
+    padding: 4px 4px;
+    font-size: @font-size-small;
+    font-family: simsun;
+    vertical-align: middle;
+  }
+
+  &-btn {
+    border: 0;
+    .size(60px, 24px);
+    padding-right: 7px;
+    color: #315895;
+    text-align: right;
+    vertical-align: middle;
+    background: url(http://stock.eastmoney.com/imagesV2/backtop.gif) no-repeat 5px -117px #BBD4E8;
+  }
+
+}
+
+.@{stbui}backtop-icon {
+  background: url(http://stock.eastmoney.com/imagesV2/backtop.gif) no-repeat;
+  .size(@backtop-width, @backtop-height);
+  border: 1px solid #9CB9D6;
+  cursor: pointer;
+  outline: none;
+
+  &-search {
+    background-position: 0 0;
+    padding-top: 34px;
+    font-size: @font-size-small;
+    color: @white;
+
+    &:hover {
+      background-position: -51px 0;
+    }
+  }
+
+  &-up {
+    background-position: 0 -51px;;
+    margin-top: 4px;
+    &:hover {
+      background-position: -51px -51px;
+    }
+  }
+}

@@ -1,104 +1,104 @@
 @import "../common/variables.less";
 
 .@{stbui}list {
-  overflow: hidden;
-  width: 100%;
-
-  li {
-    display: block;
-    margin-bottom: -1px;
-
-    a {
-      display: inline-block;
-      padding: 6px 0;
-      .font-variant(@link-color; @font-size-base; @font-family-base);
-
-      &:hover,
-      &:focus,
-      &:active,
-      &.active {
-        color: @link-hover-color;
-      }
-    }
-
-  }
-}
-
-.@{stbui}list-summary {
-  font-size: 16px;
-  color: #315795;
-  font-family: "Microsoft YaHei";
+  margin: 5px 0;
   overflow: hidden;
 
   li {
-    padding: 12px 0;
+    background: url(http://stock.eastmoney.com/imagesV2/xgbg.png) -138px -119px no-repeat;
+    padding: 4px 0 4px 10px;
 
     h3 {
-      text-align: center;
-      font-size: 20px;
+      font-size: @font-size-large;
+      font-family: @font-family-yahei;
     }
+  }
+
+  &-summary {
+    .font-variant(#315795, 16px, @font-family-yahei);
+    overflow: hidden;
+
+    li {
+      padding: 12px 0;
+      background: none;
+
+    }
+  }
+
+  &-truncate li a {
+    word-wrap: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &-border li {
+    padding-left: 12px;
+    padding-right: 12px;
+    border: 1px solid @table-border-color;
+  }
+
+  &-striped li:nth-of-type(even) {
+    background: #f5f5f5;
   }
 }
 
-.@{stbui}list-truncate li a {
-  word-wrap: normal;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
+.@{stbui}list-md {
 
-.@{stbui}list-border li {
-  padding-left: 12px;
-  padding-right: 12px;
-  border-width: 1px;
-}
+  li {
+    padding: 4px 0 4px 15px;
+    line-height: 17px;
 
-.@{stbui}list-striped li:nth-of-type(even) {
-  background: #f5f5f5;
+    a {
+      font-size: @font-size-base;
+    }
+  }
+
+  .@{stbui}list-title {
+    background: url(http://stock.eastmoney.com/imagesV2/publicel.gif) no-repeat -187px -189px;
+    margin-top: 6px;
+    padding-left: 8px;
+    color: @white;
+
+    .@{stbui}list-category {
+      font-size: @font-size-small;
+      color: @white;
+      margin-right: 22px;
+    }
+  }
+
 }
 
 /*.media*/
-.@{stbui}media {
-  margin-top: 15px;
+.@{stbui}media-list {
+  position: relative;
 
-  &:first-child{
-    margin-top: 0;
+  li {
+    .clearfix();
   }
-}
 
-.@{stbui}media, .@{stbui}media-body {
-  overflow: hidden;
-  zoom: 1;
-}
+  .item-media {
+    float: left;
+    margin-right: 12px;
+  }
 
-.@{stbui}media-body {
-  display: table-cell;
-  vertical-align: top;
-}
+  .item-inner {
+  }
+  .item-title {
+    font: 18px/32px "微软雅黑","simhei";
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 4px 0;
+  }
 
-.@{stbui}media-left,
-.@{stbui}media-right {
-  display: table-cell;
-  vertical-align: top;
-}
-
-
-.@{stbui}media-left,
-.@{stbui}media .@{stbui}pull-left {
-  padding-right: 10px;
-}
-
-
-.@{stbui}media-object {
-  display: block;
-}
-
-.@{stbui}media-heading {
-  margin-top: 0;
-  margin-bottom: 5px;
-}
-
-
-.@{stbui}media-right {
-  float: right;
+  .item-text {
+    color: #818181;
+    overflow: hidden;
+    line-height: 26px;
+  }
+  .item-attach {
+    color: #818181;
+    text-align: right;
+  }
 }

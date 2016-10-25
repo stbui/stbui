@@ -3,14 +3,19 @@
 const path = require('path');
 const program = require('commander');
 const spawn = require('win-spawn');
-const exists = require('fs').existsSync;
+const fs = require('fs');
+const exists = fs.existsSync;
 
+// 项目根目录
 const ROOT_PATH = path.dirname(__dirname) + path.sep;
 const COMMAND_PATH = ROOT_PATH + 'lib';
 
+var pkg = fs.readFileSync(ROOT_PATH+'package.json','utf-8');
+pkg = JSON.parse(pkg);
+
 
 program
-    .version('1.0.1', '-v, --version')
+    .version(pkg.version, '-v, --version')
     .usage('<command> [options]')
     .on('--help', printHelp)
     .on('-h', printHelp)
@@ -33,6 +38,8 @@ const args = process.argv.slice(3);
 const acronym = {
     "i": "init",
     "prj": "project",
+    "creact": "project",
+    "c": "project",
     "w": "widget",
     "f": "framework",
     "p": "page"

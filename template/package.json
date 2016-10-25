@@ -1,18 +1,15 @@
 {
   "name": "stbui",
-  "version": "1.0.0",
-  "description": "stbui",
+  "author": "stbui.com",
+  "version": "1.0.4",
+  "description": "Stbui，一套为开发者准备的前端集成库，提供了配套资源，帮助你的网站快速成型。",
   "scripts": {
     "start": "stbui server start",
+    "open": "stbui server open",
+    "dev": "stbui release dev",
+    "watch": "stbui release dev -w",
     "build": "stbui release prod",
-    "dev": "stbui release dev -wL --verbose",
     "prod": "stbui release prod",
-    "dist": "stbui release prod",
-    "watch": "stbui release dev -wL"
-  },
-  "author": "stbui.com",
-  "license": "ISC",
-  "devDependencies": {
-    "fis3-hook-commonjs": "^0.1.25"
+    "dist": "stbui release prod"
   }
 }

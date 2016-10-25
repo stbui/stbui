@@ -1,5 +1,6 @@
 @import "../common/variables.less";
 
+
 .@{stbui}table {
   border-collapse: collapse;
   width: 100%;
@@ -8,48 +9,48 @@
   font-size: @font-size-small;
   font-family: @font-family-yahei;
 
-  thead, tbody {
-    tr {
-      th, td {
-        padding: 7px;
-      }
-    }
+  thead tr th,
+  thead tr td,
+  tbody tr td{
+    padding: 7px;
   }
 
-  thead tr th {
-    border-bottom: 1px solid #DCDCDC;
+  thead tr th,
+  thead tr td {
+    text-align: center;
+    border-bottom: 1px solid @table-border-color;
   }
 
   tbody tr td {
     text-align: center;
   }
 
-}
-
-.@{stbui}table-hover {
-  tbody tr:hover {
-    background-color: #ECEBEB;
-  }
-}
-
-.@{stbui}table-bordered {
-  border: 1px solid #c9c9c9;
-
-  thead {
-    th,
-    td {
-      background-color: #F2F2F2;
-      color: #3c3c3c;
-      line-height: 1.4;
-      padding: 5px;
+  &-hover {
+    tbody tr:hover {
+      background-color: @table-border-color;
     }
   }
 
-  th,
-  td {
-    border: 1px solid #c9c9c9;
+  &-border {
+    border: 1px solid @table-border-color;
+
+    thead {
+      th,
+      td {
+        color: #333;
+        line-height: 1.4;
+        padding: 5px;
+      }
+    }
+
+    th,
+    td {
+      border: 1px solid @table-border-color;
+    }
   }
+
 }
+
 
 .table-theme-variant(default, @brand-default);
 .table-theme-variant(primary, @brand-primary);

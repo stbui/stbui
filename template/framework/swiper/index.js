@@ -1,3 +1,12 @@
+/**
+ * @name 轮播组件
+ * @author: bright
+ * @mail: 772020653@qq.com
+ * @website: http://stbui.com
+ * @update: 2016.10.08
+ */
+
+/*
 function Swiper(element,options) {
     this.element = (typeof element == 'string') ? $(element) : element;
     this.itemSlide = this.element.find('.swiper-slide');
@@ -95,4 +104,4 @@ var swiper = new Swiper('.swiper', {
         var $slide = self.itemSlide.eq(self.options.cPage);
         $slide.css('background', '#' + $slide.find('img').attr('alt'));
     }
-});
+});*/

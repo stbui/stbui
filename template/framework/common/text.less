@@ -73,6 +73,14 @@ p {
   .text-nowrap;
 }
 
+.text-u {
+  text-decoration: underline;
+}
+
+.text-b {
+  font-weight: bold;
+}
+
 .text-size-variant(@font-size-small);
 .text-size-variant(@font-size-large);
 .text-size-variant(@font-size-base);
@@ -89,9 +97,21 @@ p {
 .text-color-variant(warning; @brand-warning);
 .text-color-variant(disabled; @brand-disabled);
 .text-color-variant(active; @brand-active);
+.text-color-variant(~"red"; @brand-red);
+.text-color-variant(~"green"; @brand-green);
+.text-color-variant(~"black"; #333);
+.text-color-variant(~"orange-red"; #ff4901);
 
 .text-color-variant(@theme; @color) {
   .text-@{theme} {
     color: @color;
   }
+}
+
+.red {
+  color: @brand-red
+}
+
+.green {
+  color: @brand-green
 }

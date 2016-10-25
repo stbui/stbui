@@ -1,7 +1,7 @@
 {
   "name": "stbui",
-  "version": "1.0.2",
-  "description": "stbui",
+  "version": "1.0.4",
+  "description": "Stbui，一套为开发者准备的前端集成库，提供了配套资源，帮助你的网站快速成型。",
   "main": "index.js",
   "bin": {
     "stbui": "bin/stbui.js"
@@ -30,6 +30,8 @@
     "fis3-hook-relative": "^1.0.9",
     "fis3-postpackager-loader": "^1.5.3",
     "fis3-preprocessor-js-require-css": "^0.1.0",
+    "inquirer": "^1.2.2",
+    "stbui-pc": "*",
     "vinyl-fs": "^2.4.3",
     "win-spawn": "^2.0.0"
   },

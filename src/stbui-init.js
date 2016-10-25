@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import program from 'commander';
+import child_process from 'child_process';
 
 program
     .version('1.0.1', '-v, --version')
@@ -23,11 +24,31 @@ if (subcmd) {
  * */
 function printHelp() {
     console.log();
-    console.log('stbui init <name>');
+    console.log('stbui init test <name>');
     console.log();
 }
 
 
-function init() {
+function init(subcmd) {
+    let command = 'stbui';
+    let option = ['clone',subcmd];
+
+    const {spawn} = child_process;
+    let cmd = process.platform === "win322" ? command + ".cmd" : command;
+    let cli = spawn(cmd, option);
+
+    cli.stdout.setEncoding('UTF-8');
+    cli.stdout.on('data', (data) => {
+        console.log(data);
+    });
+
+    cli.stderr.setEncoding('UTF-8');
+    cli.stderr.on('data', (data) => {
+        console.log(data);
+    });
+
+    cli.on('close', () => {
+
+    });
 
 }

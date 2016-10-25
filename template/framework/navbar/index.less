@@ -1,7 +1,9 @@
 @import "../common/variables.less";
 
+@navbar-height:35px;
+
 .@{stbui}navbar {
-  height: 40px;
+  height: @navbar-height;
   overflow: hidden;
 
   &:after,
@@ -11,13 +13,11 @@
   }
 
   li {
-    display: inline;
     position: relative;
+    display: inline;
     float: left;
     white-space: nowrap;
-    line-height: 40px;
-    //padding-left: 10px;
-    //padding-right: 10px;
+    line-height: @navbar-height;
 
     &.active a,
     &.active a:focus,
@@ -35,16 +35,39 @@
     }
 
     a {
-      padding-left: 10px;
-      padding-right: 10px;
       display: block;
+      padding-left: 11px;
+      padding-right: 11px;
       font-size: @font-size-base;
+      text-align: center;
 
       &:focus,
       &:hover {
         text-decoration: none;
       }
     }
+
+    b {
+      float: left;
+      margin: 9px 0;
+      width: 1px;
+      height: 13px;
+      background-color: #3A5E95;
+      border-right: 1px solid #758FB5;
+    }
+  }
+
+
+}
+
+.@{stbui}navbar-title {
+  //width: 60px;
+  background: #525252;
+  border-right: 2px solid white;
+  font-weight: bold;
+
+  a:hover {
+    color: @white!important;
   }
 }
 
@@ -62,7 +85,7 @@
 
       &:focus,
       &:hover {
-        color: #f00;
+        color: @brand-red;
       }
 
     }
@@ -79,7 +102,7 @@
   border-right: 1px solid #3A5E95;
 
   a {
-    color: #000;
+    color: @black;
     font-weight: 900;
   }
 }
@@ -89,7 +112,36 @@
 
   a {
     font-weight: 900;
+  }
+}
 
+
+.navbar-links {
+  height: 30px;
+
+  li {
+    line-height: normal;
+    padding: 5px 0;
+
+    a {
+      padding-left: 8px;
+      padding-right: 9px;
+      background: url('http://global.eastmoney.com/images/Global/element.png') no-repeat -90px -188px;
+      .font-variant(@black,12px,@font-family-base);
+
+      &:hover {
+        text-decoration: underline;
+        color: @link-hover-color;
+      }
+    }
+
+    &.first {
+      margin-left: -1px;
+    }
+
+    .red a {
+      color: @brand-red;
+    }
   }
 }
 

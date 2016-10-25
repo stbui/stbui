@@ -29,6 +29,13 @@ function createTemplate(folderName) {
     newFile(less, "." + folderName + " {\r\n}");
     // newFile(html, htmlTemplate());
 
+    console.log();
+    console.log('$ create framework success');
+    console.log();
+    console.log('  /framework/' + subcmd);
+    console.log('  /framework/' + subcmd + '/index.js');
+    console.log('  /framework/' + subcmd + '/index.less');
+    console.log();
 }
 
 function newFile(file, content) {
@@ -38,7 +45,7 @@ function newFile(file, content) {
 }
 
 function mkdir(path) {
-    console.log('mkdir:', path);
+    // console.log('mkdir:', path);
 
     let {existsSync, mkdirSync} = fs;
     if (existsSync(path)) {
@@ -54,9 +61,13 @@ function htmlTemplate() {
     return str;
 }
 
-
+/**
+ *
+ * @param: moduleName
+ * @return:
+ */
 function jsTemplate(moduleName) {
-    let str = `/*\r\n * @tool:stbui\r\n * @version:0.0.1\r\n * @update:2016.08.22\r\n */`;
+    let str = `/*\r\n * @tool:stbui\r\n * @version:0.0.1\r\n * @author:bright\r\n * @mail:772020653@qq.com\r\n * @website:http://stbui.com\r\n * @update:2016.10.08\r\n */`;
     str += `\r\n\r\n`;
     str += `var ${moduleName} = {\r\n}`;
     str += `\r\n\r\n`;

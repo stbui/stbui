@@ -1,9 +1,8 @@
 前端集成解决方案
 =============
-> 构建项目流程工具，可以生成相应目录和代码，同时对项目进行编译
+> Stbui，一套为开发者准备的前端集成库，提供了配套资源，帮助你的网站快速成型。
 
 - [x] 生成项目、模块、页面、组件文件结构
-
 - [x] JS 文件的分析、合并、压缩、版本管理
 - [x] CSS 文件的分析、合并、压缩、版本管理
 - [x] HTML 文件分析、压缩、版本管理
@@ -28,10 +27,10 @@ npm install -g stbui --verbose
 ```bash
 npm install -g stbui --registry=https://registry.npm.taobao.org --verbose
 ```
-安装完成后，可以通过 `stbui -v` 命名查看安装的版本
+安装完成后，可以通过 `stbui -v` 命令查看安装的版本
 
 
-## 使用命令创建项目
+## 创建项目
 
 stbui 安装完成后，就可以通过下面的命令创建项目：
 ```bash
@@ -42,7 +41,7 @@ stbui project demo
 
 ## 构建项目
 ```bash
-stbui release dev -wL
+stbui release dev -w
 ```
 项目中有文件修改就会自动构建了。
 
@@ -52,7 +51,7 @@ stbui server open
 ```
 
 
-## 启动项目服务
+## 启动服务
 
 在项目目录下执行命令
 
@@ -61,30 +60,35 @@ stbui server start
 ```
 
 ## 访问项目
-打开浏览器，访问http://127.0.0.1:8080即可
+打开浏览器，访问:
+
+```bash
+http://127.0.0.1:8080
+```
 
 
 ## 项目结构
+```
 ├── dist
-│   ├── xxx.zip
+│   └── xxx.zip
 │
 ├── framework
-│   ├── framework
+│   ├── common
 │       ├── images
-│       ├── index.less
-│       ├── index.js
-│       ├── index.html
+│       ├── stbui.less
+│       └── index.js
 │
 ├── page
 │   ├── page
 │       ├── images
 │       ├── index.less
 │       ├── index.js
-│       ├── index.html
-├──
+│       └── index.html
 │
-└──  stbui-conf.js
-
+├── package.json
+├── map.json
+└── stbui-conf.js
+```
 
 
 
@@ -92,18 +96,19 @@ stbui server start
 你可以通过 `stbui -h` 帮助查看相关命令
 
 ```bash
-stbui release
-stbui server
-stubi project <name>
-stbui framework <name>
-stbui page <name>
+stbui release <name>    # 构建代码
+stbui server <name>     # 本地服务
+stubi project <name>    # 创建项目
+stbui framework <name>  # 添加公共模块
+stbui page <name>       # 添加业务模块
 ```
 
-## stbui 命令简化
+## npm scripts
+你也可以使用下面方式
 ```bash
-npm run start
-npm run dev
-npm run bulid
+npm run start   # 启动开发环境
+npm run dev     # 构建开发代码
+npm run bulid   # 打包产线代码
 ```
 
 ## 配置文件
@@ -112,7 +117,5 @@ npm run bulid
 
 
 如果使用中遇到什么觉得诡异的地方，欢迎拨打热线电话10086
-
-- https://github.com/fex-team/fis-parser-jdists
 
 ## ChangeLog

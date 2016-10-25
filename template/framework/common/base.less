@@ -15,10 +15,10 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 
-  * {
-    //outline: 0;
-    //zoom: 1;
-  }
+  //* {
+  //  outline: 0;
+  //  zoom: 1;
+  //}
 
   button::-moz-focus-inner {
     border-color: transparent !important;
@@ -54,6 +54,8 @@ a {
   outline: none;
   text-decoration: none;
   background-color: transparent;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
 
   &:hover {
     color: @link-hover-color;
