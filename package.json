@@ -1,6 +1,6 @@
 {
   "name": "stbui",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Stbui，一套为开发者准备的前端集成库，提供了配套资源，帮助你的网站快速成型。",
   "main": "index.js",
   "bin": {
