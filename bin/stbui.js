@@ -50,7 +50,7 @@ if (subcmd != 'release' && subcmd != 'server') {
     if (bin) {
         spawn(bin, args, {stdio: 'inherit', customFds: [0, 1, 2]});
     } else {
-        require('../lib/webpack/stbui-webpack');
+        require('../lib/stbui-tool');
     }
 } else {
     require('../lib/fis/stbui-fis');

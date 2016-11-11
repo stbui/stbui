@@ -101,6 +101,7 @@ stbui server <name>     # 本地服务
 stubi project <name>    # 创建项目
 stbui framework <name>  # 添加公共模块
 stbui page <name>       # 添加业务模块
+stbui-ide               # 可视化工具，需要单独安装
 ```
 
 ## npm scripts
@@ -109,6 +110,7 @@ stbui page <name>       # 添加业务模块
 npm run start   # 启动开发环境
 npm run dev     # 构建开发代码
 npm run bulid   # 打包产线代码
+npm run ide     # 可视化工具
 ```
 
 ## 配置文件
